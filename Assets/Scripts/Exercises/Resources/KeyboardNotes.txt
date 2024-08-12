@@ -1,0 +1,25 @@
+The <b>keyboard</b> tab has a keyboard that can be played with, but is also the tab where exercises happen - although exercises are selected from the <b>Options</b> tab.
+
+<size=30><b>Control Panels</b></size>
+
+It has 4 control panels that can be switched from a pulldown on the top left of the tab.
+
+<b>Home</b>
+The panel has a master volume slider - as well as metronome and BPM controls. A larger dialog to control the BPM and metronome can be accessed by tapping on the BPM value.
+
+<b>Key Label & Highlighting</b>
+The keyboard has labeling features, both to label the individual key names, and to highlight the keys for various scales.
+
+<b>Key Dimensions</b>
+The physical dimensions of the keyboard can be modified by using the controls in this panel. They keys can be widened and the length of the black keys can be modified. The number of octaves can be changed, and the height of the horizontal scrollbar can be raised.
+
+<b>Data Buffers</b>
+The panel has controls for affecting data parameters and audio quality. Typically increasing performance will involve reducing quality so these controls allow changing those settings to whatever suits your needs and preferences.
+
+<size=30><b>Exercise View</b></size>
+
+Note that not control panels will be available during exercises, and not all controls will be available. Exercises can only be run in the Keyboard tab. In order to visit other tabs while an exercise is running, the exercise must be stopped. This can be done by selecting the door icon that is only avaialable when exercises are running.
+
+On the top right is the E-Stop button. It will turn red if any wiring notes are playing. It can be pressed to stop all wiring audio and to stop the metronome.
+
+On multitouch devices, the piano supports multitouch and the scrollbar supports pinch gestures to scale the width of piano keys.

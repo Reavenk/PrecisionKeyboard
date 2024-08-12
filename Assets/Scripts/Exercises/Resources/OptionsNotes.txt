@@ -1,0 +1,29 @@
+The <b>Options</b> tab has exercises, notes, and various app controls.
+
+Content is on the left.
+
+<b>Ear Training Exercises</b>
+Exercises for ear training. Notes and phrases are played and the the user needs to identify them from a multiple-choice selection.
+
+<b>Keyboard Exercises</b>
+Exercises involving interacting with the keyboard. Questions are shown and the user must press the correct keys.
+
+<b>Notes</b>
+Readable notes explaining parts of the application.
+
+On the right are app controls.
+
+<b>UI Scale</b>
+The scale factor of the entire application.
+
+<b>Master Vol</b>
+The master volume of the wiring instruments. This is the same slider as the one in the <b>Keyboard</b> tab.
+
+<b>FPS Meter</b>
+If true, the applications FPS meter will be shown at the top right to give insight to the application's performance and responsiveness.
+
+<b>FPS Scale</b>
+The size of the FPS meter.
+
+<b>Tab Height</b>
+The height of the tabs (i.e. Keyboard, Wiring, Options). They can be scaled up to twice the height for accessibility.

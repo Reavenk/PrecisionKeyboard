@@ -1,0 +1,21 @@
+Some notes about the performance of the application.
+
+<b><size=30>Introduction and Benchmarking</size></b>
+
+Like all software, the performance of the application is heavily dependent on the hardware its running on.
+
+In the <b>Options</b> tab there is an option to enable a frames per second (FPS) meter. The FPS the application is running at determines how fast touch inputs are processesed both for touching a keyboard key, and releasing it. The more complex a wiring is, the most processing power it taken to generate its audio, which may make the application run at a lower FPS. Pressing multiple keys at once will also take up more processing power.
+
+<b><size=30>Tips and Troubleshooting</size></b>
+
+To speed up the application, the <b>sample rate</b> can be lowered. This is the number of audio samples generated to make the sound for the wiring. This can be changed from the <b>Keyboard</b> tab, in the <b>Data Buffers</b> subtab. Lowering the sample rate will make the application generate audio at a lower computational cost, but will do so by sacraficing quality. The lower the sample rate, the lower the quality. 44000 is the ideal value for the highest quality.
+
+When creating wirings, be careful when using the <b>Chorus</b> node. It's expensive, and becomes more expensive the more stuff is connected to the left of it - so try to move it as far left of the node network as possible.
+
+If an instrument is too complex, it may lower the FPS, or even slow down the speed of the application and input without affecting the FPS much. An instrument that is too complex for the hardware the application is running on will generate stutters and input lag. There are a few options.
+• Simplify the instrument.
+• Player the instrument slower with less notes at a time.
+• Test the wiring on more advanced hardware.
+• Lower the quality setting, specifically the <b>Samples/Sec</b> value in the Keyboard's <b>Data Buffers</b> control panel.
+
+If you need the application to be more responsive, try lowering the <b>Priority</b> value in the Keyboard's <b>Data Buffers</b> control panel. For the highest input speed, use the <b>Responsiveness</b> option.

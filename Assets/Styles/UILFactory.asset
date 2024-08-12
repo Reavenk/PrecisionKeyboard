@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cc7b6c4ac79003498207f7e9f378ab6, type: 3}
+  m_Name: UILFactory
+  m_EditorClassIdentifier: 
+  buttonTextAttrib:
+    font: {fileID: 0}
+    pointSize: 0
+    color: {r: 0, g: 0, b: 0, a: 0}
+  buttonSprite: {fileID: 21300000, guid: 529452adea57b1341a558cbc0a14e246, type: 3}
+  minButtonSize: {x: 0, y: 0}
+  buttonPadding:
+    left: 15
+    top: 15
+    right: 15
+    bot: 20
+  buttonTransition: 2
+  buttonSpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 21300000, guid: 8f2fcabd5f0b4304790052d63cbb03f5, type: 3}
+    m_DisabledSprite: {fileID: 0}
+  buttonFontColor: {r: 0, g: 0, b: 0, a: 1}
+  buttonFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  buttonFontSize: 20
+  headerTextAttrib:
+    font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    pointSize: 14
+    color: {r: 0, g: 0, b: 0, a: 1}
+  headerSprite: {fileID: 21300000, guid: 36e2abc77ab7dc143b73bc18583bdcf8, type: 3}
+  minHeaderSize: {x: 0, y: 0}
+  headerPadding:
+    left: 0
+    top: 0
+    right: 0
+    bot: 0
+  horizontalSplitterSprite: {fileID: 21300000, guid: 1c2ac25275e959849bf9cca49f03ac3c,
+    type: 3}
+  verticalSplitterSprite: {fileID: 0}
+  minSplitterSize: {x: 8, y: 8}
+  horizontalScrollbarButtonSprite: {fileID: 0}
+  horizontalScrollbarSprite: {fileID: 0}
+  horizontalScrollbarThumbSprite: {fileID: 0}
+  verticalScrollbarButtonSprite: {fileID: 0}
+  verticalScrollbarSprite: {fileID: 0}
+  verticalScrollbarThumbSprite: {fileID: 0}
+  textTextAttrib:
+    font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    pointSize: 14
+    color: {r: 0, g: 0, b: 0, a: 1}
+  inputSprite: {fileID: 21300000, guid: 36e2abc77ab7dc143b73bc18583bdcf8, type: 3}
+  inputPadding:
+    left: 15
+    top: 15
+    right: 15
+    bot: 15
+  inputFontSize: 14
+  inputFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  inputFontColor: {r: 0, g: 0, b: 0, a: 1}

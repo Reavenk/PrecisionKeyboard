@@ -1,0 +1,102 @@
+<size=30>Misc</size>
+
+<b>Where are the achievements, high scores and gamified features?</b>
+No... just no...
+
+<b>Do I have to be a virtuoso musician or digital audio technician to get the most out of this application.</b>
+Who's to say... but this application can be used by complete beginners. Remember that at it's core, it's still first-and-foremost a keyboard application with multiple provided preset instruments. Go to the wiring tab, check out the different available instruments from the dropdown menu and start mashing keys! Just have fun.
+
+<b>What is this tuned to?</b>
+The keys are set to A440, where A4 has a frequency of 440. This is not changeable.
+
+<b>Can I plug my device into an amplifier for performances?</b>
+Yes, there are no technical reasons why that wouldn't be possible. But, be careful because the app may create transients depending on if a wiring is programed to, or if the device doesn't play well with the application.
+
+<b>What does the E-Stop affect?</b>
+The E-Stop stops notes currently being played and released, as well as stops the metronome. It will also stop any MIDI notes being played.
+
+<b>Why does the E-Stop turn red?</b>
+When the E-Stop button is red, that means there is currently streaming audio being processed. In which case pressing the E-Stop will interrupt all currently playing audio. If the button is not red, pressing the button will have no effect except for stopping the metronome.
+
+<b>Why is the E-Stop needed?</b>
+Just a precaution. Sometimes the input for releasing a keyboard key may not register and a note will keep playing. It happens rarely, but the E-Stop can be used to fix those situations. 
+
+<i>Or,... you chould try to get fancy using it for key choking, although you're bound to create transients when instantly stopping the audio.</i>
+
+<b>What does the master control affect?</b>
+This affects the volume of the wiring. This is not a replacement for your device's volume. Keep in mind the volume of the wiring is also controled by how the wiring is authored. Also, a master value that is too high increases the chance of clipping the audio, especially if multiple piano keys are pressed at once.
+
+<b>Can I do exercises with a MIDI keyboard?</b>
+Not all exercises involve a keyboard - but for those that do, yes. Just make sure you're on the correct octave as the exercises are sensitive to note octaves.
+
+<b>Are banner ads purposfully spawned when I try to press keys?</b>
+Absolutely not! Banner ads are shown <b>once</b> every time the app is started, and every-so-often when the app is resumed from an unpaused app state. While the ads are told to be shown immediately they sometimes take a few second - most likey from technical issues, internet downloading and a delay from ad auctioning.
+
+<size=30>Troubleshooting</size>
+
+<b>Does the Master control affect my device's system volume?</b>
+No. The Master control only affects the volume of wiring notes generated from pressing keyboard keys, or that are played in exercises.
+
+<b>I hear poping noises. What are those and how can I get rid of them?</b>
+While poping noises in digital audio is common symptom of the application and device not being able to fill a PCM audio buffer that's large enough, or a computer that can't fill it fast enough, the Unity engine has an issue on certain Android platforms where poping is generated when the device's WiFi is enabled. While not an ideal work-around, if you hear transients and poping for simple wirings, turn off your device's WiFi and check if that helps.
+
+<i>Or,... if you're experiencing these issues but you're playing along to lofi chill-hop, leave your WiFi on just go with it!</i>
+
+<b>Poping noises occur when using MIDI input.</b>
+Some devices may experience poping, even if WiFi is turned off.
+
+<b>I hear "rattling" roises that don't occur at lower loudness. How can I get rid of that?</b>
+Rattling that occurs when the volume gets too loud is called "clipping". This happens because the samples that make up audio data need to fall within a certain number range, and louder volume requires larger values which instead the risk of those values falling outside of the valid range. An instrument naturally being tool loud may be an issue, in which case put an Amplifier node at the end of its wiring or turn down the Master volume. Overlapping audio can also cause this issue, if multiple notes are played at once - or if multiple notes are played over application audio, such as exercise notifications or the metronome. Again, turning down the Master volume is one solution - but because it lowers the loudness, you may need to raise your speaker volume to maintain the same loudness.
+
+Check the meter if you're hearing rattling. The Master should be set so a few notes (2 to 4 simultaneous notes for example) can be played at the same time before going into the yellow. If the meter is reaching the red, that's a sure sign that clipping is happening or about to occur.
+
+If you hear rattling on specific note but not on notes lower or higher, the tone could be resonating with your speaker or loose items close to it.
+
+<b>Some instruments are pretty much inaudible at lower notes and really loud at higher notes?</b>
+While I can't explain every situation this could happen for, this is is possibly mix between frequency response of your device (especially if they're very small or low-powered speakers with simple timbres) and the frequency response of the human ear (Fletcher Munson Curve). You may need to plug your device into more capable speakers, add more complexity and upper partials to your wiring's timbre, or simple raise the volume.
+
+<b>Notes played with a release envelope don't instantly release.</b>
+For technical reasons, they don't. If there is no release envelope, the note will instantly stop upon release, but at the risk of transients.
+
+<b>I'm pressing the keys but not hearing any notes.</b>
+Here's a basic checklist that should cover <b>most</b> cases:
+• Is the Master volume slider set high enough.
+• Is the output of the current wiring instrument plugged in?
+• Is the current wiring instrument playing the tone loud enough?
+• Is the current wiring instrument playing and the tone your playing effective with your speaker's frequency response.
+• Is the volume of your operation system audio set high enough?
+• Is the volume setting for your hardware speakers (if playing through speakers with additional volume controls) set high enough?
+
+<b>Can I backup or share my created wirings?</b>
+Yes, simply backup or share the saved "phon" files saved by the application.
+
+<b>What else supports the *.phon file format?</b>
+The phon files are XML based files made specifically for this app. So nothing else.
+
+<b>If I edit the Starting Instruments wiring that come preloaded when the app starts, do I risk ruining them?</b>
+No, they are reloaded every time the app starts. If you modify it and save the wiring, you're saving a copy. If you mess them up, simply restart the app. Feel free to be bold and play around with editing the Starting Instruments!
+
+<size=30>Dashed Expectations</size>
+
+<b>Can I used my saved wiring instruments as a VST or import it into a DAW?</b>
+No. At least not currently - and there are no immediate plans to create a compatible VST.
+
+<b>The application has exercises but isn't a comprehensive exercise system or anything close to a complete music theory teaching tool.</b>
+Yes, that is true - that's also not a question, just a statement.
+
+<b>The Wiring tutorial isn't a comprehensive teaching tool for music and audio synthesis and recording arts.</b>
+The Wiring tutorial is a basic intro into how to use the Wiring system. And prerequisite introductory concepts mentioned 
+
+<size=30>Lexicon</size>
+
+<b>I see the application using the acronym "BEV", what does that mean?</b>
+Bird's eye view. It reffers to the scrollbar that acts as the "minimap" to the entire keyboard.
+
+<b>I see the application using the phrase "frequency response", what does that mean?</b>
+Frequency response refers both to microphones and speakers - but in the context of this application is always refers to speakers. The frequency response is the ability for speakers to play notes in certain frequency ranges. Different speakers will sound different because of how they're physically constructed, and for low quality speakers (such as those common for cellphones and tablets), speakers may not be effective (too quiet) at playing wiring in a certain note range that may sound perfectly fine with other speakers. For the best quality on a mobile device, headphones are recommended.
+
+<b>I see the acronym "ROYGBIVM" used in the application, what does that mean?</b>
+Pronounced <i>Roy G. Bivem</i>. Red - Orange - Yellow - Green - Blue - Indigo - Violet - Magenta. It's the same ordering as colors in the rainbow (ROYGVIB) but with magenta added at the end. These are the colors assigned to label the octaves in the BEV and on the background (it colored background is turned on). The big thing to remember is that Middle C (C4) and A440 (A4) are in the green (as in "Goldilocks zone") octave.
+
+<b>I see the application using the word "transients", what does that mean?</b>
+Transients are very fast changes in the audio generated that create (unintended) poping sounds - not because the poping sound is in the audio data, but because these rapid audio changes attempt to move the speaker faster than it can effectivly physically move.

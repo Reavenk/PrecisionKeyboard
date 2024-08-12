@@ -1,0 +1,142 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1697d4ce32f12f46850f6afa31470f4, type: 3}
+  m_Name: FileBrowseProp
+  m_EditorClassIdentifier: 
+  iconDeclarations:
+  - icon:
+      iconSmall: {fileID: 21300000, guid: 48e2cc04caf574e41bb3db72c3c858ac, type: 3}
+      iconMed: {fileID: 21300000, guid: 48e2cc04caf574e41bb3db72c3c858ac, type: 3}
+      iconLarge: {fileID: 21300000, guid: 48e2cc04caf574e41bb3db72c3c858ac, type: 3}
+    extensions:
+    - .phon
+  iconFolder:
+    iconSmall: {fileID: 21300000, guid: 257dfc4270a865f48bb21a21feec3090, type: 3}
+    iconMed: {fileID: 21300000, guid: 257dfc4270a865f48bb21a21feec3090, type: 3}
+    iconLarge: {fileID: 21300000, guid: 257dfc4270a865f48bb21a21feec3090, type: 3}
+  iconDefault:
+    iconSmall: {fileID: 21300000, guid: ca2d351663a5902478f503eba5d29dc7, type: 3}
+    iconMed: {fileID: 21300000, guid: ca2d351663a5902478f503eba5d29dc7, type: 3}
+    iconLarge: {fileID: 21300000, guid: ca2d351663a5902478f503eba5d29dc7, type: 3}
+  filenameFont:
+    font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    size: 16
+  sliderSprite: {fileID: 21300000, guid: bf0f4de5e9aa9734cb4279960844d51f, type: 3}
+  sliderThumb:
+    transition: 2
+    colors:
+      m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+      m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+      m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+      m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+      m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+      m_ColorMultiplier: 1
+      m_FadeDuration: 0.1
+    color: {r: 1, g: 1, b: 1, a: 1}
+    sprite: {fileID: 21300000, guid: 529452adea57b1341a558cbc0a14e246, type: 3}
+    spriteState:
+      m_HighlightedSprite: {fileID: 0}
+      m_PressedSprite: {fileID: 21300000, guid: 8f2fcabd5f0b4304790052d63cbb03f5,
+        type: 3}
+      m_SelectedSprite: {fileID: 0}
+      m_DisabledSprite: {fileID: 0}
+  fileScrollSensitivity: 50
+  fileplateSelectedColor: {r: 0, g: 1, b: 0, a: 1}
+  fileplateDeselectedColor: {r: 1, g: 1, b: 1, a: 1}
+  fileplateSprite: {fileID: 21300000, guid: 36e2abc77ab7dc143b73bc18583bdcf8, type: 3}
+  fileplateSpriteSelected: {fileID: 21300000, guid: 36e2abc77ab7dc143b73bc18583bdcf8,
+    type: 3}
+  inputLabel:
+    font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    size: 20
+  inputText:
+    font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    size: 20
+  inputLabelInputPadding: 10
+  inputPadding: 10
+  inputPlateSprite: {fileID: 21300000, guid: 36e2abc77ab7dc143b73bc18583bdcf8, type: 3}
+  confirmButtons:
+    transition: 2
+    colors:
+      m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+      m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+      m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+      m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+      m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+      m_ColorMultiplier: 1
+      m_FadeDuration: 0.1
+    color: {r: 1, g: 1, b: 1, a: 1}
+    sprite: {fileID: 21300000, guid: 529452adea57b1341a558cbc0a14e246, type: 3}
+    spriteState:
+      m_HighlightedSprite: {fileID: 21300000, guid: 9ac72651dbd3fd94fa08cf5e99ce7d46,
+        type: 3}
+      m_PressedSprite: {fileID: 21300000, guid: 8f2fcabd5f0b4304790052d63cbb03f5,
+        type: 3}
+      m_SelectedSprite: {fileID: 21300000, guid: 9ac72651dbd3fd94fa08cf5e99ce7d46,
+        type: 3}
+      m_DisabledSprite: {fileID: 21300000, guid: 82b13bf8f12468348b55cfa0adb82794,
+        type: 3}
+  buttonPadding:
+    left: 0
+    top: 0
+    right: 0
+    bottom: 5
+  crumbButtons:
+    transition: 1
+    colors:
+      m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+      m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+      m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+      m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+      m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+      m_ColorMultiplier: 1
+      m_FadeDuration: 0.1
+    color: {r: 1, g: 1, b: 1, a: 1}
+    sprite: {fileID: 21300000, guid: b6de943e69248bf419928cf0ac58c4b0, type: 3}
+    spriteState:
+      m_HighlightedSprite: {fileID: 0}
+      m_PressedSprite: {fileID: 21300000, guid: 8f2fcabd5f0b4304790052d63cbb03f5,
+        type: 3}
+      m_SelectedSprite: {fileID: 0}
+      m_DisabledSprite: {fileID: 0}
+  navButtons:
+    transition: 2
+    colors:
+      m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+      m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+      m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+      m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+      m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+      m_ColorMultiplier: 1
+      m_FadeDuration: 0.1
+    color: {r: 1, g: 1, b: 1, a: 1}
+    sprite: {fileID: 21300000, guid: 529452adea57b1341a558cbc0a14e246, type: 3}
+    spriteState:
+      m_HighlightedSprite: {fileID: 21300000, guid: 9ac72651dbd3fd94fa08cf5e99ce7d46,
+        type: 3}
+      m_PressedSprite: {fileID: 21300000, guid: 8f2fcabd5f0b4304790052d63cbb03f5,
+        type: 3}
+      m_SelectedSprite: {fileID: 21300000, guid: 9ac72651dbd3fd94fa08cf5e99ce7d46,
+        type: 3}
+      m_DisabledSprite: {fileID: 21300000, guid: 82b13bf8f12468348b55cfa0adb82794,
+        type: 3}
+  navBackSprite: {fileID: 21300000, guid: ec86edc03bfaf1b4fbb2445c67284798, type: 3}
+  navForwardSprite: {fileID: 21300000, guid: 71300ebaa2b3fe340a03a10d50f3b282, type: 3}
+  navUpSprite: {fileID: 21300000, guid: 5ce6b8eeac41174458f5deaabc293906, type: 3}
+  navCrumbFont:
+    font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    size: 14
+  navCrumbPadding: 15

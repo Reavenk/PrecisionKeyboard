@@ -1,0 +1,616 @@
+﻿// <copyright file="GNBase.cs" company="Pixel Precision LLC">
+// Copyright (c) 2020 All Rights Reserved
+// </copyright>
+// <author>William Leu</author>
+// <date>05/22/2020</date>
+// <summary>Base class for wrapped editable nodes.</summary>
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public abstract class GNBase
+{
+    /// <summary>
+    /// Enums for each unique dervied GNBase class.
+    /// </summary>
+    public enum NodeType
+    {
+        Abs,
+        Amplify,
+        CombAdd,
+        CombSub,
+        CombMod,
+        Chorus,
+        Cube,
+        Constant,
+        Delay,
+        EnvADSR,
+        EnvAttack,
+        EnvDecay,
+        Gate,
+        GateWave,
+        Invert,
+        Lerp,
+        MAD,
+        Max,
+        Min,
+        NoiseWave,
+        Output,
+        Quant,
+        Release,
+        SawWave,
+        Sign,
+        SineWave,
+        Square,
+        SquareWave,
+        TriWave,
+        Void // Unset/Error type
+    }
+
+    /// <summary>
+    /// The various catagories to organize the nodes into.
+    /// </summary>
+    public enum Category
+    { 
+        Wave,
+        Combines,
+        Envelopes,
+        Voices,
+        Operations,
+        Special
+    }
+
+    /// <summary>
+    /// The id to uniquly identify the node.
+    /// </summary>
+    private string guid = string.Empty;
+
+    /// <summary>
+    /// public accessor.
+    /// </summary>
+    public string GUID {get{return this.guid; } }
+
+    /// <summary>
+    /// The list of introspective parameters.
+    /// </summary>
+    protected List<ParamBase> genParams = new List<ParamBase>();
+
+    /// <summary>
+    /// Public enumerator for parameters.
+    /// </summary>
+    public IEnumerable<ParamBase> nodeParams 
+    {
+        get
+        {
+            return this.genParams; 
+        } 
+    }
+
+    /// <summary>
+    /// The position location on the graph.
+    /// </summary>
+    public Vector2 cachedUILocation;
+
+    /// <summary>
+    /// Create a generator based on the the node type.
+    /// </summary>
+    /// <param name="nodeType">The node type to create.</param>
+    /// <param name="guid">The node's GUID. </param>
+    /// <returns>The created node.</returns>
+    public static GNBase CreateGenerator(GNBase.NodeType nodeType, string guid)
+    {
+        switch (nodeType)
+        {
+            case NodeType.Output:
+                return new GNOutput(guid);
+
+            case NodeType.Abs:
+                return new GNAbs(guid);
+
+            case NodeType.Amplify:
+                return new GNAmplify(guid);
+
+            case NodeType.Chorus:
+                return new GNCloneChorus(guid);
+
+            case NodeType.CombAdd:
+                return new GNCombAdd(guid);
+
+            case NodeType.CombSub:
+                return new GNCombSub(guid);
+
+            case NodeType.CombMod:
+                return new GNCombMul(guid);
+
+            case NodeType.Constant:
+                return new GNConstant(guid);
+
+            case NodeType.Cube:
+                return new GNCube(guid);
+
+            case NodeType.Delay:
+                return new GNDelay(guid);
+
+            case NodeType.EnvADSR:
+                return new GNEnvADSR(guid);
+
+            case NodeType.EnvAttack:
+                return new GNEnvAttack(guid);
+
+            case NodeType.EnvDecay:
+                return new GNEnvDecay(guid);
+
+            case NodeType.Gate:
+                return new GNGate(guid);
+
+            case NodeType.GateWave:
+                return new GNGateWave(guid);
+
+            case NodeType.Invert:
+                return new GNInvert(guid);
+
+            case NodeType.Lerp:
+                return new GNLerp(guid);
+
+            case NodeType.NoiseWave:
+                return new GNNoise(guid);
+
+            case NodeType.Quant:
+                return new GNQuant(guid);
+
+            case NodeType.MAD:
+                return new GNMAD(guid);
+
+            case NodeType.Max:
+                return new GNMax(guid);
+
+            case NodeType.Min:
+                return new GNMin(guid);
+
+            case NodeType.Release:
+                return new GNRelease(guid);
+
+            case NodeType.SineWave:
+                return new GNSineWave(guid);
+
+            case NodeType.SawWave:
+                return new GNSawtoothWave(guid);
+
+            case NodeType.Sign:
+                return new GNSign(guid);
+
+            case NodeType.Square:
+                return new GNSquare(guid);
+
+            case NodeType.SquareWave:
+                return new GNSquareWave(guid);
+
+            case NodeType.TriWave:
+                return new GNTriangleWave(guid);
+
+            case NodeType.Void:
+                return null;
+
+        }
+
+        return null;
+    }
+
+    /// <summary>
+    /// Default constructor, creates the node with a randomly
+    /// generated GUID.
+    /// </summary>
+    public GNBase()
+    { 
+        this.guid = System.Guid.NewGuid().ToString();
+
+        this._Init();
+    }
+
+    /// <summary>
+    /// Constructor that creates the node with a specified GUID.
+    /// </summary>
+    /// <param name="guid"></param>
+    public GNBase(string guid)
+    { 
+        if(string.IsNullOrEmpty(guid) == true)
+            this.guid = System.Guid.NewGuid().ToString();
+        else
+            this.guid = guid;
+
+        this._Init();
+    }
+
+    /// <summary>
+    /// Generates a new random GUID.
+    /// </summary>
+    public void RegenerateName()
+    {
+        this.guid = System.Guid.NewGuid().ToString();
+    }
+
+    public void SetGUID(string newGuid)
+    { 
+        this.guid = newGuid;
+    }
+
+    /// <summary>
+    /// Create a GenBase based off the node's parameters and connections.
+    /// </summary>
+    /// <param name="freq">The frequency of the note being generated.</param>
+    /// <param name="beatsPerSec">The BPM of the node.</param>
+    /// <param name="samplesPerSec">The samples per second of the PCM being generated.</param>
+    /// <param name="amp">The amplitude generators should generate at.</param>
+    /// <returns>The GenBase generator.</returns>
+    public abstract PxPre.Phonics.GenBase SpawnGenerator(float freq, float beatsPerSec, int samplesPerSec, float amp);
+
+    public abstract NodeType nodeType {get;}
+
+    public bool SetConnection(ParamConnection ownedConParam, GNBase newConnection)
+    {
+        if(ownedConParam.IsConnected() == true)
+        {
+            if(ownedConParam.Reference == newConnection)
+                return true;
+
+            if (newConnection.HierarchyContains(this) == true)
+                return false;
+        }
+
+        ownedConParam.SetReference(newConnection);
+        return true;
+    }
+
+    /// <summary>
+    /// Check if the node has a parameter that references a GNBase
+    /// </summary>
+    /// <param name="gb">The GNBase to compare against.</param>
+    /// <returns>True if the node contains a parameter referencing the node, else false.</returns>
+    public bool HierarchyContains(GNBase gb)
+    {
+        foreach (ParamBase pb in this.genParams)
+        {
+            if (pb.type != ParamBase.Type.PCMInput)
+                continue;
+
+            ParamConnection pc = pb as ParamConnection;
+            if(pc.IsConnected() == false)
+                continue;
+
+            if (pc.Reference == gb)
+                return true;
+
+            if( pc.Reference.HierarchyContains(gb) == true)
+                return true;
+        }
+
+        return false;
+    }
+
+    /// <summary>
+    /// Clear all PCM connection parameters in the node.
+    /// </summary>
+    public void ClearAllConnections()
+    {
+        foreach (ParamBase pb in this.genParams)
+        {
+            if (pb.type != ParamBase.Type.PCMInput)
+                continue;
+
+            ParamConnection pc = pb as ParamConnection;
+            if (pc.IsConnected() == false)
+                continue;
+
+            pc.SetReference(null);
+            
+        }
+    }
+
+    public bool ClearKnowledgeOfConnection(GNBase gnb)
+    {
+        bool any = false;
+        foreach (ParamBase pb in this.genParams)
+        {
+            if (pb.type != ParamBase.Type.PCMInput)
+                continue;
+
+            ParamConnection pc = pb as ParamConnection;
+            if (pc.IsConnected() == false)
+                continue;
+
+            if(pc.Reference == gnb)
+            {
+                pc.SetReference(null);
+                any = true;
+            }
+        }
+        return any;
+    }
+
+    public ParamConnection GetConnectionParam(string name)
+    {
+        foreach (ParamBase pb in this.genParams)
+        {
+            if (pb.type != ParamBase.Type.PCMInput)
+                continue;
+
+            if(pb.name != name)
+                continue;
+
+            ParamConnection pc = pb as ParamConnection;
+            return pc;
+        }
+
+        return null;
+    }
+
+    public virtual bool LoadXML(System.Xml.XmlElement ele, Dictionary<string, GNBase> directory)
+    {
+        foreach (System.Xml.XmlElement ch in ele)
+        {
+            ParamBase.Type ty = ParamBase.FromSerializationType(ch.Name);
+            if (ty == ParamBase.Type.Invalid)
+                continue;
+
+            System.Xml.XmlAttribute attrName = ch.Attributes["name"];
+            if (attrName == null)
+                continue;
+
+            string paramName = attrName.Value;
+            ParamBase pb = this.GetParam(paramName, ty);
+            if (pb == null)
+                continue;
+
+            pb.SetValueFromString(ch.InnerText, directory);
+        }
+
+        return true;
+    }
+
+    public virtual bool LoadXML(System.Xml.XmlElement ele)
+    { 
+
+        foreach(System.Xml.XmlElement ch in ele)
+        {
+            ParamBase.Type ty = ParamBase.FromSerializationType(ch.Name);
+            if(ty == ParamBase.Type.Invalid)
+                continue;
+
+            System.Xml.XmlAttribute attrName = ch.Attributes["name"];
+            if(attrName == null)
+                continue;
+
+            string paramName = attrName.Value;
+            ParamBase pb = this.GetParam( paramName, ty);
+            if(pb == null)
+                continue;
+
+            pb.SetValueFromString(ch.InnerText);
+
+            System.Xml.XmlAttribute attrViz = ch.Attributes["visible"];
+            if(attrViz != null)
+                pb.visible = ParamBool.ConvertFromString(attrViz.Value);
+        }
+        return true;
+    }
+
+
+    public virtual bool SaveXML(System.Xml.XmlElement ele)
+    { 
+        foreach(ParamBase pb in this.genParams)
+        { 
+            string paramType = ParamBase.ToSerializationType(pb.type);
+            System.Xml.XmlElement paramEle = ele.OwnerDocument.CreateElement(paramType);
+            paramEle.SetAttribute("name", pb.name);
+            paramEle.InnerText = pb.GetStringValue();
+            paramEle.SetAttribute("visible", ParamBool.ConvertToString(pb.visible));
+
+            ele.AppendChild(paramEle);
+        }
+
+        return true;
+    }
+
+    public static System.Xml.XmlElement CreateSaveElement(System.Xml.XmlElement parent, GNBase gnb)
+    { 
+        System.Xml.XmlElement ret = parent.OwnerDocument.CreateElement("node");
+        ret.SetAttribute("type", gnb.nodeType.ToString());
+        ret.SetAttribute("id", gnb.GUID);
+        ret.SetAttribute("x", gnb.cachedUILocation.x.ToString());
+        ret.SetAttribute("y", gnb.cachedUILocation.y.ToString());
+        parent.AppendChild(ret);
+
+        gnb.SaveXML(ret);
+
+        return ret;
+
+    }
+
+    /// <summary>
+    /// Get a parameter of a specified type and name.
+    /// </summary>
+    /// <param name="name">The name of the parameter to retrive.</param>
+    /// <returns>The found parameter, or null if none was found.</returns>
+    public ParamBase GetParam(string name)
+    { 
+        foreach(ParamBase pb in this.genParams)
+        { 
+            if(pb.name == name)
+                return pb;
+        }
+        return null;
+    }
+
+    /// <summary>
+    /// Get a parameter of a specified type and name.
+    /// </summary>
+    /// <param name="name">The name of the parameter to retrive.</param>
+    /// <param name="ty">The required type of the parameter to retrive.</param>
+    /// <returns>The found parameter, or null if none was found.</returns>
+    public ParamBase GetParam(string name, ParamBase.Type ty)
+    { 
+        foreach(ParamBase pb in this.genParams)
+        {
+            if(pb.name != name)
+                continue;
+
+            if(pb.type != ty)
+                continue;
+
+            return pb;
+        }
+
+        return null;
+    }
+
+    /// <summary>
+    /// Get the node's bool parameter matching a specified name.
+    /// </summary>
+    /// <param name="name">The name of the parameter to retrive.</param>
+    /// <returns>The found parameter, or null if none was found.</returns>
+    public ParamBool GetBoolParam(string name)
+    { 
+        ParamBase pb = GetParam(name, ParamBase.Type.Bool);
+        if(pb == null)
+            return null;
+
+        return (ParamBool)pb;
+    }
+
+    /// <summary>
+    /// Get the node's int parameter matching a specified name.
+    /// </summary>
+    /// <param name="name">The name of the parameter to retrive.</param>
+    /// <returns>The found parameter, or null if none was found.</returns>
+    public ParamInt GetIntParam(string name)
+    {
+        ParamBase pb = GetParam(name, ParamBase.Type.Int);
+        if(pb == null)
+            return null;
+
+        return (ParamInt)pb;
+    }
+
+    /// <summary>
+    /// Get the node's float parameter matching a specified name.
+    /// </summary>
+    /// <param name="name">The name of the paramter to retrieve.</param>
+    /// <returns>The found parameter, or null if none was found.</returns>
+    public ParamFloat GetFloatParam(string name)
+    { 
+        ParamBase pb = GetParam(name, ParamBase.Type.Float);
+        if(pb == null)
+            return null;
+
+        return (ParamFloat)pb;
+    }
+
+    /// <summary>
+    /// Get the node's enum parameter matching a specified name.
+    /// </summary>
+    /// <param name="name">The name of the parameter to retrive</param>
+    /// <returns>The found parameter, or null if none was found.</returns>
+    public ParamEnum GetParamEnum(string name)
+    {
+        ParamBase pb = GetParam(name, ParamBase.Type.Enum);
+        if(pb == null)
+            return null;
+
+        return (ParamEnum)pb;
+    }
+
+    public ParamConnection GetParamConnection(string name)
+    { 
+        ParamBase pb = GetParam(name, ParamBase.Type.PCMInput);
+        if(pb == null)
+            return null;
+
+        return (ParamConnection)pb;
+    }
+
+    public abstract GNBase CloneType();
+
+    public virtual GNBase Clone(Dictionary<string, GNBase> directory = null)
+    { 
+        GNBase clone = this.CloneType();
+
+        for(int i = 0; i < clone.genParams.Count; ++i)
+        { 
+            ParamBase pbClone = clone.genParams[i];
+            ParamBase pbThis = null;
+
+            if(
+                this.genParams[i].name == pbClone.name && 
+                this.genParams[i].type == pbClone.type)
+            {
+                pbThis = this.genParams[i];
+            }
+            else
+            { 
+                pbThis = 
+                    this.GetParam(
+                        clone.genParams[i].name, 
+                        clone.genParams[i].type);
+            }
+
+            if(pbThis == null)
+                continue;
+
+            string str = this.genParams[i].GetStringValue();
+
+            if (directory == null)
+                clone.genParams[i].SetValueFromString(str);
+            else
+                clone.genParams[i].SetValueFromString(str, directory);
+        }
+
+        return clone;
+    }
+
+    /// <summary>
+    /// Get the node's assigned category.
+    /// </summary>
+    /// <returns>The node's category.</returns>
+    public abstract Category GetCategory();
+
+    /// <summary>
+    /// The node's category's color.
+    /// </summary>
+    /// <returns>The node's categoryu's color.</returns>
+    public Color GetColor()
+    { 
+        return GetCategoryColor(this.GetCategory());
+    }
+
+    /// <summary>
+    /// Based off a category value, return the color assigned to 
+    /// represent the category.
+    /// </summary>
+    /// <param name="c">The category to retrieve the color for.</param>
+    /// <returns>The catagory's color.</returns>
+    public static Color GetCategoryColor(Category c)
+    { 
+        switch(c)
+        { 
+            case Category.Wave:
+                return new Color(0.5f, 1.0f, 0.5f);
+
+            case Category.Voices:
+                return new Color(1.0f, 0.5f, 0.5f);
+
+            case Category.Operations:
+                return new Color(1.0f, 0.5f, 1.0f);
+
+            case Category.Envelopes:
+                return new Color(0.5f, 0.5f, 1.0f);
+
+            case Category.Combines:
+                return new Color(1.0f, 0.75f, 0.5f);
+        }
+
+        return Color.white;
+    }
+
+    protected abstract void _Init();
+}

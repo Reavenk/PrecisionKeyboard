@@ -1,0 +1,1041 @@
+<phonics active="Rhodedendron">
+  <wiring name="Layered Sine" cat="misc" output="8d3da214-b242-43c2-ad86-d0684f6b55bc">
+    <node type="Output" id="8d3da214-b242-43c2-ad86-d0684f6b55bc" x="1796.059" y="-431.936">
+      <connection name="Input" visible="false">a43254b2-2f26-4a19-a4da-84e444108f72</connection>
+    </node>
+    <node type="SineWave" id="c82bcd8c-dbeb-4b1a-8141-98b639d09ed4" x="463.1495" y="-135.8539">
+      <float name="Gain" visible="false">1</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="SineWave" id="ea043ddd-0858-4c3d-9d52-72e0b9d805e0" x="69.89165" y="-304.6165">
+      <float name="Gain" visible="false">0.336</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="Cube" id="a43254b2-2f26-4a19-a4da-84e444108f72" x="1511.735" y="-449.6572">
+      <connection name="Input" visible="false">eda4300c-eab4-4459-88a5-7b2a18ecd803</connection>
+    </node>
+    <node type="CombAdd" id="5a75fa57-303c-4bbe-924e-e7caca8cb4ae" x="709.4995" y="-236.6221">
+      <connection name="A" visible="false">c82bcd8c-dbeb-4b1a-8141-98b639d09ed4</connection>
+      <connection name="B" visible="false">ea043ddd-0858-4c3d-9d52-72e0b9d805e0</connection>
+    </node>
+    <node type="SineWave" id="c39df293-0c7b-470b-8d6b-62c3df000f01" x="441.2689" y="-431.1477">
+      <float name="Gain" visible="false">0.124</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="CombAdd" id="c9f99be4-1a3a-44ac-8c0d-2cf0c265ed9e" x="943.8933" y="-417.2297">
+      <connection name="A" visible="false">5a75fa57-303c-4bbe-924e-e7caca8cb4ae</connection>
+      <connection name="B" visible="false">c39df293-0c7b-470b-8d6b-62c3df000f01</connection>
+    </node>
+    <node type="EnvADSR" id="eda4300c-eab4-4459-88a5-7b2a18ecd803" x="1242.825" y="-339.2938">
+      <connection name="Input" visible="false">c9f99be4-1a3a-44ac-8c0d-2cf0c265ed9e</connection>
+      <timelen name="Offset" visible="false">sec| 0</timelen>
+      <timelen name="Attack" visible="false">sec| 0.25</timelen>
+      <timelen name="Decay" visible="false">sec| 0.25</timelen>
+      <float name="Sustain" visible="false">0.5</float>
+      <timelen name="Release" visible="false">sec| 0.1</timelen>
+    </node>
+    <node type="Comment" id="d3581fe2-9dde-44ff-afb0-ee6b69285281" x="130.1794" y="-21.48958">
+      <text name="text" visible="false">A simple example of combining multiple sines to fill in upper partials.</text>
+    </node>
+  </wiring>
+  <wiring name="Simple Sine" cat="unlabled" output="2e7b0472-5d97-449c-8889-089992732a8f">
+    <node type="Output" id="2e7b0472-5d97-449c-8889-089992732a8f" x="706.5089" y="-193.1816">
+      <connection name="Input" visible="false">76a0cd5e-3191-4162-8d66-31888d9f94d6</connection>
+    </node>
+    <node type="SineWave" id="c1eb54c5-35f5-49f1-ad41-7f8481edb2b6" x="32.73568" y="-247.3164">
+      <float name="Gain" visible="false">0.8</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="EnvADSR" id="76a0cd5e-3191-4162-8d66-31888d9f94d6" x="367.034" y="-179.1348">
+      <connection name="Input" visible="false">c1eb54c5-35f5-49f1-ad41-7f8481edb2b6</connection>
+      <timelen name="Offset" visible="false">sec| 0</timelen>
+      <timelen name="Attack" visible="false">sec| 0.25</timelen>
+      <timelen name="Decay" visible="false">sec| 0.25</timelen>
+      <float name="Sustain" visible="false">0.5</float>
+      <timelen name="Release" visible="false">sec| 0.1</timelen>
+    </node>
+    <node type="Comment" id="a2270a0e-7aab-4af6-9598-0c3442c74067" x="23.108" y="-17.323">
+      <text name="text" visible="false">Nothing fancy.
+
+An example of just a sine wave, but with an all-in-one ASDR connected to it.</text>
+    </node>
+  </wiring>
+  <wiring name="Chorus Saw" cat="electro" output="41c48a43-39b7-4ae6-9f0d-8daeac3e2e74">
+    <node type="Output" id="41c48a43-39b7-4ae6-9f0d-8daeac3e2e74" x="962.5743" y="-209.0369">
+      <connection name="Input" visible="false">285e841e-c496-4b3b-9521-62972ec71d53</connection>
+    </node>
+    <node type="Chorus" id="cc25c3d8-a5d8-408a-bb4b-d70c7470ab19" x="384.2169" y="-211.3562">
+      <connection name="Input" visible="false">400b3d9b-52d8-4298-8eac-67ead47f2ab9</connection>
+      <int name="Voices" visible="false">5</int>
+      <float name="Dampen" visible="false">1</float>
+      <float name="Freq Offset" visible="false">0.003999949</float>
+    </node>
+    <node type="SawWave" id="400b3d9b-52d8-4298-8eac-67ead47f2ab9" x="62.05239" y="-254.1185">
+      <float name="Gain" visible="false">1</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="EnvADSR" id="285e841e-c496-4b3b-9521-62972ec71d53" x="665.8537" y="-197.5276">
+      <connection name="Input" visible="false">cc25c3d8-a5d8-408a-bb4b-d70c7470ab19</connection>
+      <timelen name="Offset" visible="false">sec| 0</timelen>
+      <timelen name="Attack" visible="false">sec| 0.25</timelen>
+      <timelen name="Decay" visible="false">sec| 0.25</timelen>
+      <float name="Sustain" visible="false">0.5</float>
+      <timelen name="Release" visible="false">sec| 0.1</timelen>
+    </node>
+    <node type="Comment" id="e334ec8a-2b29-4f29-b6f4-5a89e4778391" x="47.44291" y="-33.65682">
+      <text name="text" visible="false">An example of how to start building up to a supersaw.
+
+The basic premise is to combine a bunch of similar sawtooths together, which is done with a chorus as a VERY low offset which adds a phasey effect.</text>
+    </node>
+  </wiring>
+  <wiring name="CreepyOrgan" cat="alien" output="3dddd126-4b1d-4d77-8764-534370ad8cb4">
+    <node type="Output" id="3dddd126-4b1d-4d77-8764-534370ad8cb4" x="2837.968" y="-91.99324">
+      <connection name="Input" visible="false">d1167c7a-f9cc-40dc-8857-b7557c981386</connection>
+    </node>
+    <node type="SineWave" id="42265071-ce23-4859-a123-087289793b98" x="39.43185" y="-234.3095">
+      <float name="Gain" visible="false">0.18</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="TriWave" id="af21286c-3882-46c1-bd74-16551f3211ec" x="722.3412" y="-512.8121">
+      <float name="Gain" visible="false">0.8</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="Chorus" id="641f92f1-590c-4ad1-8a67-f8f952cb0bef" x="1002.32" y="-463.6988">
+      <connection name="Input" visible="false">af21286c-3882-46c1-bd74-16551f3211ec</connection>
+      <int name="Voices" visible="false">5</int>
+      <float name="Dampen" visible="false">0.7850543</float>
+      <float name="Freq Offset" visible="false">0.5</float>
+    </node>
+    <node type="CombAdd" id="6dc67162-63dd-43ff-a648-f9f6675f852c" x="1475.773" y="-193.9719">
+      <connection name="A" visible="false">411fd6e5-d8f4-462e-bd0d-289fc69dd3d8</connection>
+      <connection name="B" visible="false">641f92f1-590c-4ad1-8a67-f8f952cb0bef</connection>
+    </node>
+    <node type="CombSub" id="9794bcd0-08e0-4141-909a-12aec4841ce8" x="576.6597" y="0">
+      <connection name="A" visible="false">5b5e9a00-a2cf-4b96-8b12-1757fb610b5b</connection>
+      <connection name="B" visible="false">068384c5-ded0-4647-bf4f-f92540e5d098</connection>
+    </node>
+    <node type="Quant" id="068384c5-ded0-4647-bf4f-f92540e5d098" x="299.7284" y="-187.6251">
+      <connection name="Input" visible="false">42265071-ce23-4859-a123-087289793b98</connection>
+      <float name="Levels" visible="false">50</float>
+    </node>
+    <node type="Amplify" id="4563ba9b-1592-47cc-8550-ad1f0096f71c" x="882.5852" y="-34.62811">
+      <connection name="Input" visible="false">9794bcd0-08e0-4141-909a-12aec4841ce8</connection>
+      <float name="Gain" visible="false">0.5</float>
+    </node>
+    <node type="TriWave" id="5b5e9a00-a2cf-4b96-8b12-1757fb610b5b" x="46.11807" y="-5.277425">
+      <float name="Gain" visible="false">0.8</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="SquareWave" id="4a4a9492-d7b9-48a8-9251-b0bf393fbfb7" x="486.2122" y="-1025.994">
+      <float name="Gain" visible="false">0.399</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="TriWave" id="1bf2ed33-9757-4f0e-b017-0ce44b2e7c7a" x="120.5651" y="-783.2312">
+      <float name="Gain" visible="false">1</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="MAD" id="44c090b4-c6ea-4401-9101-1bfe949fc506" x="463.4221" y="-784.2426">
+      <connection name="Input" visible="false">1bf2ed33-9757-4f0e-b017-0ce44b2e7c7a</connection>
+      <float name="Mul" visible="false">0.5</float>
+      <float name="Add" visible="false">0.5</float>
+    </node>
+    <node type="CombMod" id="8198bd97-c641-411b-9cb0-5f725afa1fb1" x="751.3329" y="-806.9397">
+      <connection name="A" visible="false">44c090b4-c6ea-4401-9101-1bfe949fc506</connection>
+      <connection name="B" visible="false">4a4a9492-d7b9-48a8-9251-b0bf393fbfb7</connection>
+    </node>
+    <node type="EnvAttack" id="48ec2d57-eca9-441f-b3c3-4f4e0d5f5977" x="1115.093" y="-775.5183">
+      <connection name="input" visible="false">8198bd97-c641-411b-9cb0-5f725afa1fb1</connection>
+      <timelen name="Offset" visible="false">sec| 0</timelen>
+      <timelen name="Attack" visible="false">sec| 0.25</timelen>
+    </node>
+    <node type="CombAdd" id="5f7962f7-e26a-487b-b2d9-097c7c35ac29" x="1815.597" y="-245.2905">
+      <connection name="A" visible="false">6dc67162-63dd-43ff-a648-f9f6675f852c</connection>
+      <connection name="B" visible="false">1de8c74a-1161-42f0-a671-e36b4652b957</connection>
+    </node>
+    <node type="Release" id="d1167c7a-f9cc-40dc-8857-b7557c981386" x="2472.758" y="-147.807">
+      <connection name="Input" visible="false">41f05932-2750-4f64-8193-76de5b42aaf5</connection>
+      <timelen name="Release" visible="false">sec| 1</timelen>
+    </node>
+    <node type="EnvDecay" id="1de8c74a-1161-42f0-a671-e36b4652b957" x="1466.666" y="-630.7112">
+      <connection name="Input" visible="false">48ec2d57-eca9-441f-b3c3-4f4e0d5f5977</connection>
+      <timelen name="Offset" visible="false">sec| 0.25</timelen>
+      <timelen name="Decay" visible="false">sec| 0.25</timelen>
+      <float name="Sustain" visible="false">0.5</float>
+    </node>
+    <node type="EnvDecay" id="41f05932-2750-4f64-8193-76de5b42aaf5" x="2093" y="-194.9931">
+      <connection name="Input" visible="false">5f7962f7-e26a-487b-b2d9-097c7c35ac29</connection>
+      <timelen name="Offset" visible="false">sec| 0.25</timelen>
+      <timelen name="Decay" visible="false">sec| 0.25</timelen>
+      <float name="Sustain" visible="false">0.5</float>
+    </node>
+    <node type="EnvAttack" id="411fd6e5-d8f4-462e-bd0d-289fc69dd3d8" x="1161.622" y="-57.67372">
+      <connection name="input" visible="false">4563ba9b-1592-47cc-8550-ad1f0096f71c</connection>
+      <timelen name="Offset" visible="false">sec| 0</timelen>
+      <timelen name="Attack" visible="false">sec| 0.25</timelen>
+    </node>
+    <node type="Comment" id="bf283334-c16c-45ce-aa0a-91b59839b850" x="625.996" y="-241.5227">
+      <text name="text" visible="false">The key to this instrument is here. Notice how to chorus offset is HUGE. This creates dissonance from the tone being played.</text>
+    </node>
+  </wiring>
+  <wiring name="Xylo" cat="bell" output="1f8920c2-9267-4695-966f-7224118d05c9">
+    <node type="Output" id="1f8920c2-9267-4695-966f-7224118d05c9" x="1956.204" y="-10.1832">
+      <connection name="Input" visible="false">0d77ad09-fd88-4dea-b704-22f033dc84c1</connection>
+    </node>
+    <node type="SineWave" id="5b8509fb-5206-4949-a29d-5e763d2430ea" x="488.8452" y="-30.00003">
+      <float name="Gain" visible="false">0.8</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="EnvADSR" id="0d77ad09-fd88-4dea-b704-22f033dc84c1" x="1681.919" y="-52.4366">
+      <connection name="Input" visible="false">6cf26aa5-d2ce-4856-9c67-2d0078a31f9a</connection>
+      <timelen name="Offset" visible="false">sec| 0</timelen>
+      <timelen name="Attack" visible="false">sec| 0.25</timelen>
+      <timelen name="Decay" visible="false">sec| 0.25</timelen>
+      <float name="Sustain" visible="false">0.5</float>
+      <timelen name="Release" visible="false">sec| 0.1</timelen>
+    </node>
+    <node type="Delay" id="d50487fb-ce39-475d-ae81-fe1a0126e244" x="512.9968" y="-299.4194">
+      <connection name="Input" visible="false">88617cbc-a86b-41e5-8d2c-05499a23cc59</connection>
+      <timelen name="Offset" visible="false">sec| 0.25</timelen>
+      <float name="Dampen" visible="false">0.951</float>
+      <int name="Voices" visible="false">2</int>
+    </node>
+    <node type="CombAdd" id="6cf26aa5-d2ce-4856-9c67-2d0078a31f9a" x="1359.931" y="-112.171">
+      <connection name="A" visible="false">5b8509fb-5206-4949-a29d-5e763d2430ea</connection>
+      <connection name="B" visible="false">8342cf2e-fd0b-4e1f-9d24-daafe9fb8807</connection>
+    </node>
+    <node type="Amplify" id="80fde343-af64-4d7b-8243-11c9339ff329" x="802.3572" y="-266.2234">
+      <connection name="Input" visible="false">d50487fb-ce39-475d-ae81-fe1a0126e244</connection>
+      <float name="Gain" visible="false">0.4809999</float>
+    </node>
+    <node type="Square" id="8342cf2e-fd0b-4e1f-9d24-daafe9fb8807" x="1100.157" y="-231.6402">
+      <connection name="Input" visible="false">80fde343-af64-4d7b-8243-11c9339ff329</connection>
+    </node>
+    <node type="SineWave" id="88617cbc-a86b-41e5-8d2c-05499a23cc59" x="55.5499" y="-175.7269">
+      <float name="Gain" visible="false">0.8</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+  </wiring>
+  <wiring name="WishyWash" cat="alien" output="ab955a3a-f1c3-41ed-924d-47232997b614">
+    <node type="Output" id="ab955a3a-f1c3-41ed-924d-47232997b614" x="1876.146" y="-171.9835">
+      <connection name="Input" visible="false">c8e6a04b-daf7-4872-8005-d8d9b65dc49e</connection>
+    </node>
+    <node type="SineWave" id="1d2336bd-9a88-4e29-8595-f091292da2cb" x="1842.92" y="-657.8262">
+      <float name="Gain" visible="false">0.8</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="Quant" id="e887a52f-0221-4f64-bf96-e593f05ef404" x="463.5958" y="-25.14576">
+      <connection name="Input" visible="false">39b7b750-38e6-403a-a89a-8aad5968d047</connection>
+      <float name="Levels" visible="false">8</float>
+    </node>
+    <node type="Lerp" id="4504ed6a-03c8-4dee-8e62-1ff5bbbd62d9" x="969.5901" y="-274.5621">
+      <connection name="A" visible="false">e887a52f-0221-4f64-bf96-e593f05ef404</connection>
+      <connection name="B" visible="false">5d3c56b3-27d5-4851-bda9-80d8950308c8</connection>
+      <connection name="Factor" visible="false">d59cc927-ab8d-4dd9-800f-931d56655046</connection>
+    </node>
+    <node type="TriWave" id="21fcdbb7-5596-4cf5-bcd9-210ef738f092" x="87.45786" y="-649.1873">
+      <float name="Gain" visible="false">0.8</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="SquareWave" id="2ecac5c6-ce21-4754-b201-57fa14d0b563" x="170.1606" y="-867.579">
+      <float name="Gain" visible="false">0.8</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="CombAdd" id="b9abbc33-ae5b-4350-8967-ce2daa6e9d33" x="425.8617" y="-704.2244">
+      <connection name="A" visible="false">21fcdbb7-5596-4cf5-bcd9-210ef738f092</connection>
+      <connection name="B" visible="false">2ecac5c6-ce21-4754-b201-57fa14d0b563</connection>
+    </node>
+    <node type="MAD" id="d59cc927-ab8d-4dd9-800f-931d56655046" x="719.936" y="-664.8489">
+      <connection name="Input" visible="false">b9abbc33-ae5b-4350-8967-ce2daa6e9d33</connection>
+      <float name="Mul" visible="false">0.25</float>
+      <float name="Add" visible="false">0.5</float>
+    </node>
+    <node type="TriWave" id="39b7b750-38e6-403a-a89a-8aad5968d047" x="167.1235" y="0">
+      <float name="Gain" visible="false">0.8</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="SineWave" id="c5b5d429-ab10-428a-868b-70ce8e1d8a44" x="0" y="-428.6261">
+      <float name="Gain" visible="false">1</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="SawWave" id="ef7e3958-34e9-48c1-b8ec-f092ffae0ba6" x="16.20334" y="-223.5648">
+      <float name="Gain" visible="false">1</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="Max" id="885292ab-a43d-4855-9bf7-85a31e6db399" x="357.8582" y="-322.7191">
+      <connection name="A" visible="false">ef7e3958-34e9-48c1-b8ec-f092ffae0ba6</connection>
+      <connection name="B" visible="false">c5b5d429-ab10-428a-868b-70ce8e1d8a44</connection>
+    </node>
+    <node type="Chorus" id="5d3c56b3-27d5-4851-bda9-80d8950308c8" x="654.4202" y="-345.8697">
+      <connection name="Input" visible="false">885292ab-a43d-4855-9bf7-85a31e6db399</connection>
+      <int name="Voices" visible="false">2</int>
+      <float name="Dampen" visible="false">1</float>
+      <float name="Freq Offset" visible="false">-0.004000008</float>
+    </node>
+    <node type="EnvADSR" id="c8e6a04b-daf7-4872-8005-d8d9b65dc49e" x="1497.701" y="-214.2332">
+      <connection name="Input" visible="false">4504ed6a-03c8-4dee-8e62-1ff5bbbd62d9</connection>
+      <timelen name="Offset" visible="false">sec| 0</timelen>
+      <timelen name="Attack" visible="false">sec| 0.25</timelen>
+      <timelen name="Decay" visible="false">sec| 0.25</timelen>
+      <float name="Sustain" visible="false">0.5</float>
+      <timelen name="Release" visible="false">sec| 0.1</timelen>
+    </node>
+    <node type="Comment" id="fbdd9f21-60ff-45e0-9e0f-210b69004675" x="965.7759" y="-44.28286">
+      <text name="text" visible="false">The sound gets its timbre from lerping constantly between two different tones - which themselves are made of primitive waves which combined us 4 unique types.</text>
+    </node>
+  </wiring>
+  <wiring name="SquakRobot" cat="keys" output="23e01b52-43e0-4a66-b79b-187a241ed721">
+    <node type="Output" id="23e01b52-43e0-4a66-b79b-187a241ed721" x="3213.358" y="-275.6859">
+      <connection name="Input" visible="false">ea58aaaf-57c7-49cc-b495-d2e6aa2168ea</connection>
+    </node>
+    <node type="SineWave" id="2de212a7-4225-4b14-bd75-cf5faf84e075" x="407.2947" y="-593.5379">
+      <float name="Gain" visible="false">0.8</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="GateWave" id="a0fe3b65-e0dd-4382-8092-fbc776a9f5c0" x="36.25657" y="-259.9301">
+      <float name="Gain" visible="false">1</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="GateWave" id="ccbaa06e-3419-4244-b069-49eb7bf8c16e" x="51.96659" y="-503.0722">
+      <float name="Gain" visible="false">1</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="CombAdd" id="9f737ef1-d5f7-4ec9-80a0-c5b84f72befc" x="398.8469" y="-351.665">
+      <connection name="A" visible="false">a0fe3b65-e0dd-4382-8092-fbc776a9f5c0</connection>
+      <connection name="B" visible="false">ccbaa06e-3419-4244-b069-49eb7bf8c16e</connection>
+    </node>
+    <node type="Max" id="d931be28-9915-4376-9932-a03874b8e3ad" x="664.9854" y="-238.7288">
+      <connection name="A" visible="false">73609159-5f4a-4a6e-b53f-4789b506f8f6</connection>
+      <connection name="B" visible="false">9f737ef1-d5f7-4ec9-80a0-c5b84f72befc</connection>
+    </node>
+    <node type="Constant" id="73609159-5f4a-4a6e-b53f-4789b506f8f6" x="379.5281" y="-211.065">
+      <float name="value" visible="false">1</float>
+    </node>
+    <node type="CombMod" id="60619666-acf2-416b-ad4f-cf7ad5671bbe" x="1030.557" y="-296.4909">
+      <connection name="A" visible="false">d931be28-9915-4376-9932-a03874b8e3ad</connection>
+      <connection name="B" visible="false">2de212a7-4225-4b14-bd75-cf5faf84e075</connection>
+    </node>
+    <node type="EnvDecay" id="c62ae749-8ce0-4dbc-bfc3-593415d2a1c7" x="2610.222" y="-280.3793">
+      <connection name="Input" visible="false">8c16de89-cc13-4052-b6bd-0869295ed437</connection>
+      <timelen name="Offset" visible="false">sec| 0.25</timelen>
+      <timelen name="Decay" visible="false">sec| 0.25</timelen>
+      <float name="Sustain" visible="false">0.2</float>
+    </node>
+    <node type="Release" id="ea58aaaf-57c7-49cc-b495-d2e6aa2168ea" x="2888.972" y="-282.7625">
+      <connection name="Input" visible="false">c62ae749-8ce0-4dbc-bfc3-593415d2a1c7</connection>
+      <timelen name="Release" visible="false">sec| 1</timelen>
+    </node>
+    <node type="Delay" id="c7e515ba-897b-4960-a4f9-807bba03b42a" x="1398.75" y="-299.1546">
+      <connection name="Input" visible="false">60619666-acf2-416b-ad4f-cf7ad5671bbe</connection>
+      <timelen name="Offset" visible="false">sec| 0.25</timelen>
+      <float name="Dampen" visible="false">0.8</float>
+      <int name="Voices" visible="false">8</int>
+    </node>
+    <node type="TriWave" id="f2505ed8-b9cf-4ea7-b44e-5ca3d410e215" x="1042.737" y="-624.271">
+      <float name="Gain" visible="false">1</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="CombMod" id="5f3316c9-ac78-4f41-aad4-8a3604f0c8bc" x="1719.431" y="-513.4001">
+      <connection name="A" visible="false">c7e515ba-897b-4960-a4f9-807bba03b42a</connection>
+      <connection name="B" visible="false">1238c901-d673-4363-91eb-00a1feef0167</connection>
+    </node>
+    <node type="MAD" id="1238c901-d673-4363-91eb-00a1feef0167" x="1382.391" y="-600.3568">
+      <connection name="Input" visible="false">f2505ed8-b9cf-4ea7-b44e-5ca3d410e215</connection>
+      <float name="Mul" visible="false">0.25</float>
+      <float name="Add" visible="false">0.75</float>
+    </node>
+    <node type="CombAdd" id="8c16de89-cc13-4052-b6bd-0869295ed437" x="2333.763" y="-322.8687">
+      <connection name="A" visible="false">84e549b4-2b60-45fd-8ba1-20f74f10898f</connection>
+      <connection name="B" visible="false">3581263a-95b8-49d0-bc11-f9b6345f15ed</connection>
+    </node>
+    <node type="Amplify" id="84e549b4-2b60-45fd-8ba1-20f74f10898f" x="1778.94" y="-248.5429">
+      <connection name="Input" visible="false">c7e515ba-897b-4960-a4f9-807bba03b42a</connection>
+      <float name="Gain" visible="false">0.4</float>
+    </node>
+    <node type="EnvDecay" id="3581263a-95b8-49d0-bc11-f9b6345f15ed" x="2026.263" y="-449.7544">
+      <connection name="Input" visible="false">5f3316c9-ac78-4f41-aad4-8a3604f0c8bc</connection>
+      <timelen name="Offset" visible="false">sec| 0.25</timelen>
+      <timelen name="Decay" visible="false">sec| 0.25</timelen>
+      <float name="Sustain" visible="false">0</float>
+    </node>
+    <node type="Comment" id="7a33a1ac-67ee-49f1-a4e9-ae67b559f353" x="2277.141" y="-532.6307">
+      <text name="text" visible="false">This instrument gets its initial hard "early-slap" from a dection of it decaying earlier than the rest.</text>
+    </node>
+  </wiring>
+  <wiring name="WhipSaw" cat="electro" output="18466bba-0d8a-4028-80d3-21c173fb8fb9">
+    <node type="Output" id="18466bba-0d8a-4028-80d3-21c173fb8fb9" x="3007.352" y="-278.9612">
+      <connection name="Input" visible="false">920bb617-c24a-40d8-ad4b-5979ff4d8f66</connection>
+    </node>
+    <node type="SineWave" id="a2d9a4f8-623e-4d78-a6a8-4fdf62dc4a1e" x="2287.007" y="-747.6364">
+      <float name="Gain" visible="false">0.8</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="SawWave" id="7023e12d-60d3-4ed0-976e-960b1888e127" x="259.157" y="-584.3052">
+      <float name="Gain" visible="false">1</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="Constant" id="a858d8ed-cd2d-4257-81e6-cdaac894b2e9" x="272.7898" y="-827.7992">
+      <float name="value" visible="false">0</float>
+    </node>
+    <node type="SawWave" id="8b4fd07b-1a81-4497-94f0-f0fe4cb75d9d" x="124.7091" y="-143.5817">
+      <float name="Gain" visible="false">0.8</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="Quant" id="74bc8159-e040-4cc6-83e0-327fe43fde5a" x="746.8126" y="-156.7048">
+      <connection name="Input" visible="false">18ffd583-20e6-4ac1-a2c7-f5196aa10e79</connection>
+      <float name="Levels" visible="false">8</float>
+    </node>
+    <node type="Chorus" id="18ffd583-20e6-4ac1-a2c7-f5196aa10e79" x="428.5428" y="-135.189">
+      <connection name="Input" visible="false">8b4fd07b-1a81-4497-94f0-f0fe4cb75d9d</connection>
+      <int name="Voices" visible="false">2</int>
+      <float name="Dampen" visible="false">1</float>
+      <float name="Freq Offset" visible="false">0.01100004</float>
+    </node>
+    <node type="Max" id="2d6cd154-b20f-4a4a-b083-7941e1dcf034" x="608.9429" y="-637.6895">
+      <connection name="A" visible="false">7023e12d-60d3-4ed0-976e-960b1888e127</connection>
+      <connection name="B" visible="false">a858d8ed-cd2d-4257-81e6-cdaac894b2e9</connection>
+    </node>
+    <node type="Lerp" id="7fc44592-c029-4841-af3f-3df402a1c98c" x="1550.607" y="-205.6418">
+      <connection name="A" visible="false">b546405a-f2ba-420e-8cf6-dff1da249a2f</connection>
+      <connection name="B" visible="false">74bc8159-e040-4cc6-83e0-327fe43fde5a</connection>
+      <connection name="Factor" visible="false">2d6cd154-b20f-4a4a-b083-7941e1dcf034</connection>
+    </node>
+    <node type="SawWave" id="00c5b4d2-1b4e-4aa2-a256-32e993df7749" x="746.0342" y="-402.9041">
+      <float name="Gain" visible="false">0.8</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="Lerp" id="b546405a-f2ba-420e-8cf6-dff1da249a2f" x="1126.015" y="-335.0035">
+      <connection name="A" visible="false"></connection>
+      <connection name="B" visible="false">74bc8159-e040-4cc6-83e0-327fe43fde5a</connection>
+      <connection name="Factor" visible="false">00c5b4d2-1b4e-4aa2-a256-32e993df7749</connection>
+    </node>
+    <node type="Delay" id="fc7e9aba-72be-46d4-8a86-9db309d08192" x="1841.188" y="-162.2066">
+      <connection name="Input" visible="false">7fc44592-c029-4841-af3f-3df402a1c98c</connection>
+      <timelen name="Offset" visible="false">sec| 0.25</timelen>
+      <float name="Dampen" visible="false">0.429</float>
+      <int name="Voices" visible="false">4</int>
+    </node>
+    <node type="EnvADSR" id="920bb617-c24a-40d8-ad4b-5979ff4d8f66" x="2711.457" y="-300.7037">
+      <connection name="Input" visible="false">a4fe55a5-e0bc-4e01-b496-55554416b791</connection>
+      <timelen name="Offset" visible="false">sec| 0</timelen>
+      <timelen name="Attack" visible="false">sec| 0.25</timelen>
+      <timelen name="Decay" visible="false">sec| 0.25</timelen>
+      <float name="Sustain" visible="false">0.5</float>
+      <timelen name="Release" visible="false">sec| 0.1</timelen>
+    </node>
+    <node type="SawWave" id="e40f013d-ea24-41d9-9240-540087ae49bc" x="1257.299" y="-957.7682">
+      <float name="Gain" visible="false">0.8</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="Chorus" id="fce349ab-619e-44b8-b25b-53f23a94706d" x="1574.242" y="-850.4473">
+      <connection name="Input" visible="false">e40f013d-ea24-41d9-9240-540087ae49bc</connection>
+      <int name="Voices" visible="false">8</int>
+      <float name="Dampen" visible="false">0.842</float>
+      <float name="Freq Offset" visible="false">0.006000042</float>
+    </node>
+    <node type="CombAdd" id="a4fe55a5-e0bc-4e01-b496-55554416b791" x="2148.618" y="-450.4065">
+      <connection name="A" visible="false">fc7e9aba-72be-46d4-8a86-9db309d08192</connection>
+      <connection name="B" visible="false">f541ace7-0364-4c12-9c32-8c1cfc9f2f53</connection>
+    </node>
+    <node type="EnvDecay" id="f541ace7-0364-4c12-9c32-8c1cfc9f2f53" x="1818.448" y="-852.5802">
+      <connection name="Input" visible="false">fce349ab-619e-44b8-b25b-53f23a94706d</connection>
+      <timelen name="Offset" visible="false">sec| 0.25</timelen>
+      <timelen name="Decay" visible="false">sec| 0.25</timelen>
+      <float name="Sustain" visible="false">0.5</float>
+    </node>
+    <node type="Comment" id="4b515846-f043-430d-b2e7-a2190b78d8d6" x="1706.898" y="-424.3886">
+      <text name="text" visible="false">A harsher sawtooth. Notice that since the nodegraph behind the section is so complex, a delay is preffered over a chorus.</text>
+    </node>
+    <node type="Comment" id="26f91859-2e05-4bdf-b79c-82c7ba6c3b41" x="1656.373" y="-1091.565">
+      <text name="text" visible="false">And it's backtracked by a softer saw for a little extra fill.</text>
+    </node>
+  </wiring>
+  <wiring name="Rhodedendron" cat="keys" output="3a4da45e-c2e2-466c-a5b2-43952610caf8">
+    <node type="Output" id="3a4da45e-c2e2-466c-a5b2-43952610caf8" x="3323.758" y="-460.1013">
+      <connection name="Input" visible="false">b9be8ff9-e894-48a0-ad74-a0a0b6c2f7e0</connection>
+    </node>
+    <node type="SineWave" id="295475a1-94db-4702-ae0d-60473f7cbe6d" x="481.348" y="-272.9215">
+      <float name="Gain" visible="false">0.593</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="SineWave" id="5315933f-274b-43b0-8915-8182769c8266" x="464.3785" y="-486.6866">
+      <float name="Gain" visible="false">0.067</float>
+      <timelen name="Freq" visible="false">frmm| 2</timelen>
+    </node>
+    <node type="CombAdd" id="289bcc55-cb81-4c09-957e-8563d7da9426" x="1196.431" y="-400.2613">
+      <connection name="A" visible="false">295475a1-94db-4702-ae0d-60473f7cbe6d</connection>
+      <connection name="B" visible="false">d0dee62c-4c0b-4306-a299-92963542f821</connection>
+    </node>
+    <node type="SineWave" id="72f5f99f-b9d4-4c54-8388-1ab9561bc60e" x="423.8214" y="-670.5415">
+      <float name="Gain" visible="false">0.01506396</float>
+      <timelen name="Freq" visible="false">frmm| 3</timelen>
+    </node>
+    <node type="CombAdd" id="fa587950-fee9-4bef-8aa4-d19d5197ace5" x="1448.531" y="-436.1277">
+      <connection name="A" visible="false">289bcc55-cb81-4c09-957e-8563d7da9426</connection>
+      <connection name="B" visible="false">20459677-26b8-4523-affd-5e70b99a408f</connection>
+    </node>
+    <node type="SineWave" id="1a15a8bd-fc50-4c87-b06d-5a4d901316c0" x="409.7215" y="-909.976">
+      <float name="Gain" visible="false">0.083</float>
+      <timelen name="Freq" visible="false">frmm| 4</timelen>
+    </node>
+    <node type="CombAdd" id="455bc3b0-1a1d-423b-8320-67f07bbbd146" x="694.8932" y="-903.58">
+      <connection name="A" visible="false">72f5f99f-b9d4-4c54-8388-1ab9561bc60e</connection>
+      <connection name="B" visible="false">1a15a8bd-fc50-4c87-b06d-5a4d901316c0</connection>
+    </node>
+    <node type="EnvADSR" id="b9be8ff9-e894-48a0-ad74-a0a0b6c2f7e0" x="2994.321" y="-478.8313">
+      <connection name="Input" visible="false">685a3cc0-e0e9-4890-aa19-dbeaa1866fb9</connection>
+      <timelen name="Offset" visible="false">sec| 0</timelen>
+      <timelen name="Attack" visible="false">sec| 0.03479889</timelen>
+      <timelen name="Decay" visible="false">sec| 0.1231214</timelen>
+      <float name="Sustain" visible="false">0.373</float>
+      <timelen name="Release" visible="false">sec| 0.0392088</timelen>
+    </node>
+    <node type="CombAdd" id="33d8ea6e-2e7d-49f4-8674-7ad7fd5194d7" x="1667.068" y="-509.4084">
+      <connection name="A" visible="false">fa587950-fee9-4bef-8aa4-d19d5197ace5</connection>
+      <connection name="B" visible="false">624e6255-8f0d-4ee7-9af8-24a647f58641</connection>
+    </node>
+    <node type="SineWave" id="24822acc-297e-4c2b-95e5-da63565a97a3" x="375.5078" y="-1136.595">
+      <float name="Gain" visible="false">0.101</float>
+      <timelen name="Freq" visible="false">frmm| 8</timelen>
+    </node>
+    <node type="EnvDecay" id="d0dee62c-4c0b-4306-a299-92963542f821" x="842.2248" y="-490.4081">
+      <connection name="Input" visible="false">5315933f-274b-43b0-8915-8182769c8266</connection>
+      <timelen name="Offset" visible="false">sec| 0.25</timelen>
+      <timelen name="Decay" visible="false">sec| 0.25</timelen>
+      <float name="Sustain" visible="false">0.5</float>
+    </node>
+    <node type="EnvADSR" id="624e6255-8f0d-4ee7-9af8-24a647f58641" x="1411.813" y="-920.3915">
+      <connection name="Input" visible="false">24822acc-297e-4c2b-95e5-da63565a97a3</connection>
+      <timelen name="Offset" visible="false">sec| 0</timelen>
+      <timelen name="Attack" visible="false">sec| 0.06751513</timelen>
+      <timelen name="Decay" visible="false">sec| 0.1603575</timelen>
+      <float name="Sustain" visible="false">0</float>
+      <timelen name="Release" visible="false">sec| 0</timelen>
+    </node>
+    <node type="EnvADSR" id="20459677-26b8-4523-affd-5e70b99a408f" x="1148.46" y="-812.8433">
+      <connection name="Input" visible="false">455bc3b0-1a1d-423b-8320-67f07bbbd146</connection>
+      <timelen name="Offset" visible="false">sec| 0</timelen>
+      <timelen name="Attack" visible="false">sec| 0.2693663</timelen>
+      <timelen name="Decay" visible="false">sec| 0.25</timelen>
+      <float name="Sustain" visible="false">0</float>
+      <timelen name="Release" visible="false">sec| 0</timelen>
+    </node>
+    <node type="Delay" id="685a3cc0-e0e9-4890-aa19-dbeaa1866fb9" x="2689.824" y="-514.9776">
+      <connection name="Input" visible="false">33d8ea6e-2e7d-49f4-8674-7ad7fd5194d7</connection>
+      <timelen name="Offset" visible="false">sec| 0.02896141</timelen>
+      <float name="Dampen" visible="false">0.723</float>
+      <int name="Voices" visible="false">4</int>
+    </node>
+    <node type="Comment" id="30b556fb-01ef-4c2e-ab30-2022fcd16a2c" x="1349.635" y="-174.8766">
+      <text name="text" visible="false">A stairstepping of adding sines to fill in upper partials for a root sine tone.</text>
+    </node>
+    <node type="Comment" id="8eeecf3b-fc77-4090-9ef2-06c92a870b57" x="149.7677" y="-222.2081">
+      <text name="text" visible="false">The root sine followed by upper partials. Notice how the upper partials are just incrementing integers with the timing set to a multiple of the note frequency.</text>
+    </node>
+    <node type="Comment" id="3bc6bd77-97e0-4328-81cf-08004e04c9df" x="1073.935" y="-581.7941">
+      <text name="text" visible="false">These upper partials also have envelopes to make sure they fade away pretty quickly.
+
+It's a common strategy for emulating "hammer" instruments, such as pianos and xylophones. Multiple upper partials that fade away quickly.</text>
+    </node>
+  </wiring>
+  <wiring name="Morning Brass" cat="brass" output="6656dda7-5647-43e5-a141-e7d205cd046e">
+    <node type="Output" id="6656dda7-5647-43e5-a141-e7d205cd046e" x="2077.214" y="-247.6069">
+      <connection name="Input" visible="false">ee4db747-a17b-4d78-b63c-76c196cd3362</connection>
+    </node>
+    <node type="SawWave" id="b76b547c-7148-42d9-9f87-f6d96ea9ffa3" x="499.2457" y="-144.1012">
+      <float name="Gain" visible="false">0.8</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="SawWave" id="9cd0ade1-e776-45eb-9e76-9d119e2f90df" x="183.7245" y="-250.3817">
+      <float name="Gain" visible="false">0.264</float>
+      <timelen name="Freq" visible="false">frmm| 2</timelen>
+    </node>
+    <node type="SawWave" id="e8f267c0-c5d4-4e95-a67a-befdcf58e8fa" x="419.2037" y="-698.113">
+      <float name="Gain" visible="false">0.127</float>
+      <timelen name="Freq" visible="false">frmm| 3</timelen>
+    </node>
+    <node type="CombAdd" id="4715409d-04a6-4ab8-9e37-9f3d8dd0168d" x="822.9769" y="-301.7417">
+      <connection name="A" visible="false">b76b547c-7148-42d9-9f87-f6d96ea9ffa3</connection>
+      <connection name="B" visible="false">d2c463fc-7e67-4ad8-8092-8f8cb1aedf1f</connection>
+    </node>
+    <node type="CombAdd" id="1468de84-1a42-44d4-b95f-2f492a9330cf" x="1115.536" y="-356.403">
+      <connection name="A" visible="false">4715409d-04a6-4ab8-9e37-9f3d8dd0168d</connection>
+      <connection name="B" visible="false">1420b90b-6153-4252-a260-73cca071a910</connection>
+    </node>
+    <node type="Chorus" id="1420b90b-6153-4252-a260-73cca071a910" x="808.4516" y="-619.5433">
+      <connection name="Input" visible="false">e8f267c0-c5d4-4e95-a67a-befdcf58e8fa</connection>
+      <int name="Voices" visible="false">4</int>
+      <float name="Dampen" visible="false">0.685</float>
+      <float name="Freq Offset" visible="false">-0.01023376</float>
+    </node>
+    <node type="Chorus" id="d2c463fc-7e67-4ad8-8092-8f8cb1aedf1f" x="518.7947" y="-389.1808">
+      <connection name="Input" visible="false">9cd0ade1-e776-45eb-9e76-9d119e2f90df</connection>
+      <int name="Voices" visible="false">4</int>
+      <float name="Dampen" visible="false">0.583</float>
+      <float name="Freq Offset" visible="false">-0.001999974</float>
+    </node>
+    <node type="EnvADSR" id="ee4db747-a17b-4d78-b63c-76c196cd3362" x="1753.366" y="-289.3621">
+      <connection name="Input" visible="false">2a2b8f54-c992-4680-97e6-65d59a96889a</connection>
+      <timelen name="Offset" visible="false">sec| 0</timelen>
+      <timelen name="Attack" visible="false">sec| 0.25</timelen>
+      <timelen name="Decay" visible="false">sec| 0.25</timelen>
+      <float name="Sustain" visible="false">0.5</float>
+      <timelen name="Release" visible="false">sec| 0.1</timelen>
+    </node>
+    <node type="Delay" id="2a2b8f54-c992-4680-97e6-65d59a96889a" x="1407.114" y="-338.6688">
+      <connection name="Input" visible="false">1468de84-1a42-44d4-b95f-2f492a9330cf</connection>
+      <timelen name="Offset" visible="false">frmd| 5</timelen>
+      <float name="Dampen" visible="false">0.692</float>
+      <int name="Voices" visible="false">4</int>
+    </node>
+    <node type="Comment" id="3c48ac41-3617-417d-afc9-bf809806163d" x="138.2859" y="-442.5936">
+      <text name="text" visible="false">A sawtooth with a simple upper partial at x2 the frequency and one at x3 freq with its own dedicated chorus settings.</text>
+    </node>
+  </wiring>
+  <wiring name="Air" cat="choir" output="d78dfde7-f8d7-4613-8de6-1715fc9e18f9">
+    <node type="Output" id="d78dfde7-f8d7-4613-8de6-1715fc9e18f9" x="2770.218" y="-243.7629">
+      <connection name="Input" visible="false">e080d726-a12b-4592-a98c-20bdcbbe61d0</connection>
+    </node>
+    <node type="Min" id="57073045-c801-493d-b52e-d71fdbebb319" x="1260.347" y="-94.61117">
+      <connection name="A" visible="false">0e164960-2e15-4c3d-b153-bc20f9906e5d</connection>
+      <connection name="B" visible="false">24632848-9c6f-4f0e-a912-9de7f630161c</connection>
+    </node>
+    <node type="Cube" id="b69c6408-75b1-4494-b1eb-0eaac7ee6760" x="493.239" y="-323.0426">
+      <connection name="Input" visible="false">30acac15-d732-4cb0-b501-fb62e9073110</connection>
+    </node>
+    <node type="SineWave" id="30acac15-d732-4cb0-b501-fb62e9073110" x="40.73587" y="-111.2078">
+      <float name="Gain" visible="false">1</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="Amplify" id="d25f2413-f9f8-4d14-9a00-41628aa0fb0d" x="2107.921" y="-305.4">
+      <connection name="Input" visible="false">39ef4b27-79f5-46fe-8d59-93d29d823c61</connection>
+      <float name="Gain" visible="false">1</float>
+    </node>
+    <node type="Cube" id="b3c18983-b87e-432a-ac0f-a7aac36877ae" x="740.3603" y="-309.1214">
+      <connection name="Input" visible="false">b69c6408-75b1-4494-b1eb-0eaac7ee6760</connection>
+    </node>
+    <node type="Chorus" id="0e164960-2e15-4c3d-b153-bc20f9906e5d" x="985.0209" y="-35.2219">
+      <connection name="Input" visible="false">b3c18983-b87e-432a-ac0f-a7aac36877ae</connection>
+      <int name="Voices" visible="false">4</int>
+      <float name="Dampen" visible="false">0.94</float>
+      <float name="Freq Offset" visible="false">0.2040238</float>
+    </node>
+    <node type="Constant" id="24632848-9c6f-4f0e-a912-9de7f630161c" x="1002.303" y="-307.7768">
+      <float name="value" visible="false">0</float>
+    </node>
+    <node type="TriWave" id="73d10a25-4a43-419c-8920-59eee6424d01" x="616.1606" y="-868.0596">
+      <float name="Gain" visible="false">0.8</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="Max" id="468980b5-95ed-4af8-b8bc-7498e2fbeb30" x="870.913" y="-734.7427">
+      <connection name="A" visible="false">9e6eb478-234f-45d3-956d-d885f98fadb4</connection>
+      <connection name="B" visible="false">73d10a25-4a43-419c-8920-59eee6424d01</connection>
+    </node>
+    <node type="Constant" id="9e6eb478-234f-45d3-956d-d885f98fadb4" x="610.9042" y="-737.9876">
+      <float name="value" visible="false">0</float>
+    </node>
+    <node type="Negate" id="2f6437a6-730e-44e5-86c5-62f3e8242a19" x="1188.56" y="-718.9363">
+      <connection name="input" visible="false">468980b5-95ed-4af8-b8bc-7498e2fbeb30</connection>
+    </node>
+    <node type="CombAdd" id="39ef4b27-79f5-46fe-8d59-93d29d823c61" x="1632.985" y="-369.0794">
+      <connection name="A" visible="false">57073045-c801-493d-b52e-d71fdbebb319</connection>
+      <connection name="B" visible="false">2f6437a6-730e-44e5-86c5-62f3e8242a19</connection>
+    </node>
+    <node type="EnvADSR" id="e080d726-a12b-4592-a98c-20bdcbbe61d0" x="2432.154" y="-258.4636">
+      <connection name="Input" visible="false">d25f2413-f9f8-4d14-9a00-41628aa0fb0d</connection>
+      <timelen name="Offset" visible="false">sec| 0</timelen>
+      <timelen name="Attack" visible="false">sec| 0.25</timelen>
+      <timelen name="Decay" visible="false">sec| 0.7326902</timelen>
+      <float name="Sustain" visible="false">0.773</float>
+      <timelen name="Release" visible="false">sec| 0.6104369</timelen>
+    </node>
+    <node type="Comment" id="0dde8a62-21e0-4066-9415-8705761614c5" x="105.4187" y="-296.5886">
+      <text name="text" visible="false">This one is my personal favorite! It's so clean and so dirty at the same time. Makes a decent pad.</text>
+    </node>
+    <node type="Comment" id="82035869-4d9e-49ab-9f4f-eab33d22109d" x="540.5959" y="-89.74699">
+      <text name="text" visible="false">Two cubes, this means the audio samples are being brought up to the 9th power. To make sure the wave doesn't exponentially decrease we set the gain all the way up to 1.0 (1 to any power is still 1). We'll lower it later</text>
+    </node>
+    <node type="Comment" id="9b021708-ef8a-42b4-bf22-88ae312138f8" x="1605.271" y="-540.8912">
+      <text name="text" visible="false">On the top is a spikey sine wave with only the top portions. On the bottom is the bottom of a triangle wave (which lets be real, is pretty much a spikey sine wave). 
+
+Then we stitch them together so the top and bottom parts of the waves come from different wave primitves.</text>
+    </node>
+    <node type="Comment" id="c4c093fa-9598-49b2-a256-722b174611f1" x="2037.485" y="-89.70677">
+      <text name="text" visible="false">Move the volume back down because we wouldn't before because of those two cubes.</text>
+    </node>
+  </wiring>
+  <wiring name="Beep Boop" cat="robot" output="ac71b359-958b-445b-8f95-effe2d2b8333">
+    <node type="Output" id="ac71b359-958b-445b-8f95-effe2d2b8333" x="1851.287" y="-544.8777">
+      <connection name="Input" visible="false">1d3eebca-f4f1-4787-a701-e75134fab8fe</connection>
+    </node>
+    <node type="Quant" id="a03148e8-53cb-49a5-9873-808bdd538d7a" x="561.4856" y="-266.2708">
+      <connection name="Input" visible="false">8242dd3d-d0ed-414e-8704-8c166c7b0e0f</connection>
+      <float name="Levels" visible="false">4</float>
+    </node>
+    <node type="TriWave" id="6822cac8-57c6-4d6e-86aa-180c465bb159" x="182.839" y="-414.3401">
+      <float name="Gain" visible="false">0.969</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="Cube" id="8242dd3d-d0ed-414e-8704-8c166c7b0e0f" x="283.2234" y="-270.4171">
+      <connection name="Input" visible="false">6822cac8-57c6-4d6e-86aa-180c465bb159</connection>
+    </node>
+    <node type="Amplify" id="1d3eebca-f4f1-4787-a701-e75134fab8fe" x="1486.983" y="-582.9802">
+      <connection name="Input" visible="false">c3ba1243-e304-4669-bf6b-3e722883b85a</connection>
+      <float name="Gain" visible="false">1</float>
+    </node>
+    <node type="Quant" id="393e38b8-1222-45f5-9e86-8aa5bd6b735b" x="547.8992" y="-438.8789">
+      <connection name="Input" visible="false"></connection>
+      <float name="Levels" visible="false">8</float>
+    </node>
+    <node type="GateWave" id="abb59797-8ea0-4553-88c8-31236c662c33" x="538.7739" y="-648.9218">
+      <float name="Gain" visible="false">1</float>
+      <timelen name="Freq" visible="false">frmd| 6</timelen>
+    </node>
+    <node type="Lerp" id="dd079a8f-efea-4885-b27c-617499164b9d" x="816.076" y="-329.5163">
+      <connection name="A" visible="false">a03148e8-53cb-49a5-9873-808bdd538d7a</connection>
+      <connection name="B" visible="false">393e38b8-1222-45f5-9e86-8aa5bd6b735b</connection>
+      <connection name="Factor" visible="false">abb59797-8ea0-4553-88c8-31236c662c33</connection>
+    </node>
+    <node type="SawWave" id="f6c56323-dd33-4e9b-9fcb-1ece2894fdfb" x="238.268" y="-877.9873">
+      <float name="Gain" visible="false">0.8</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="Chorus" id="fd5198ca-4a4d-48f8-bb5c-a7041443a6d1" x="540.2908" y="-829.8895">
+      <connection name="Input" visible="false">f6c56323-dd33-4e9b-9fcb-1ece2894fdfb</connection>
+      <int name="Voices" visible="false">2</int>
+      <float name="Dampen" visible="false">1</float>
+      <float name="Freq Offset" visible="false">-0.2</float>
+    </node>
+    <node type="GateWave" id="867b4a6a-500b-408a-ae77-21f81ef18713" x="840.9364" y="-949.0955">
+      <float name="Gain" visible="false">1</float>
+      <timelen name="Freq" visible="false">foct| -5</timelen>
+    </node>
+    <node type="Lerp" id="c3ba1243-e304-4669-bf6b-3e722883b85a" x="1165.587" y="-624.4098">
+      <connection name="A" visible="false">dd079a8f-efea-4885-b27c-617499164b9d</connection>
+      <connection name="B" visible="false">fd5198ca-4a4d-48f8-bb5c-a7041443a6d1</connection>
+      <connection name="Factor" visible="false">867b4a6a-500b-408a-ae77-21f81ef18713</connection>
+    </node>
+    <node type="Comment" id="2d4b2632-5147-419a-a95d-d8dfd2710cec" x="47.01609" y="-30.81101">
+      <text name="text" visible="false">Not a useful instrument, but seems to have a lot of potential for creating campy machine and robotics foley. 56K modem?</text>
+    </node>
+  </wiring>
+  <wiring name="Toasting Sine" cat="electro" output="2e7b0472-5d97-449c-8889-089992732a8f">
+    <node type="Output" id="2e7b0472-5d97-449c-8889-089992732a8f" x="2213.276" y="-315.0027">
+      <connection name="Input" visible="false">2ce16f1c-a603-4dd7-9888-ee5c9035dd5e</connection>
+    </node>
+    <node type="NoiseWave" id="2eea9bc6-141f-4612-8067-da697abaa747" x="89.52841" y="-74.30968">
+      <float name="Gain" visible="false">0.8</float>
+    </node>
+    <node type="Delay" id="608abb71-8c7b-4f7a-ab22-683d83dfa434" x="381.5005" y="-35.00817">
+      <connection name="Input" visible="false">2eea9bc6-141f-4612-8067-da697abaa747</connection>
+      <timelen name="Offset" visible="false">sec| 0.02108928</timelen>
+      <float name="Dampen" visible="false">0.563</float>
+      <int name="Voices" visible="false">5</int>
+    </node>
+    <node type="NoiseWave" id="b3eecf26-dc6c-4b8a-bb63-f697eb115039" x="383.1939" y="-312.7318">
+      <float name="Gain" visible="false">0.8</float>
+    </node>
+    <node type="Amplify" id="678cbbbe-f72f-45c2-abd5-92196f52e08f" x="654.7485" y="-48.15458">
+      <connection name="Input" visible="false">608abb71-8c7b-4f7a-ab22-683d83dfa434</connection>
+      <float name="Gain" visible="false">0.4959998</float>
+    </node>
+    <node type="SineWave" id="94cc7a56-8727-4870-ac79-4da0686dc921" x="660.7028" y="-464.8696">
+      <float name="Gain" visible="false">0.243</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="Amplify" id="b35641a2-a369-4412-8602-7a6594db02b5" x="649.0664" y="-239.1334">
+      <connection name="Input" visible="false">b3eecf26-dc6c-4b8a-bb63-f697eb115039</connection>
+      <float name="Gain" visible="false">0.195498</float>
+    </node>
+    <node type="CombAdd" id="83489706-5b2d-44ca-8146-b6437e020bc9" x="938.6625" y="-116.5094">
+      <connection name="A" visible="false">678cbbbe-f72f-45c2-abd5-92196f52e08f</connection>
+      <connection name="B" visible="false">b35641a2-a369-4412-8602-7a6594db02b5</connection>
+    </node>
+    <node type="Max" id="06f201d7-4faf-4c73-a05a-78960b8f3440" x="1222.212" y="-208.1473">
+      <connection name="A" visible="false">83489706-5b2d-44ca-8146-b6437e020bc9</connection>
+      <connection name="B" visible="false">94cc7a56-8727-4870-ac79-4da0686dc921</connection>
+    </node>
+    <node type="CombAdd" id="96d7fbbe-5ccd-4ecd-bef6-8133c2ca87b4" x="1589.443" y="-328.8926">
+      <connection name="A" visible="false">06f201d7-4faf-4c73-a05a-78960b8f3440</connection>
+      <connection name="B" visible="false">74d80cb6-a034-43db-b266-17e12f0f0063</connection>
+    </node>
+    <node type="Amplify" id="74d80cb6-a034-43db-b266-17e12f0f0063" x="1112.81" y="-468.7534">
+      <connection name="Input" visible="false">94cc7a56-8727-4870-ac79-4da0686dc921</connection>
+      <float name="Gain" visible="false">1.726</float>
+    </node>
+    <node type="EnvADSR" id="2ce16f1c-a603-4dd7-9888-ee5c9035dd5e" x="1890.605" y="-292.6426">
+      <connection name="Input" visible="false">96d7fbbe-5ccd-4ecd-bef6-8133c2ca87b4</connection>
+      <timelen name="Offset" visible="false">sec| 0</timelen>
+      <timelen name="Attack" visible="false">sec| 0.25</timelen>
+      <timelen name="Decay" visible="false">sec| 0.25</timelen>
+      <float name="Sustain" visible="false">0.5</float>
+      <timelen name="Release" visible="false">sec| 0.1</timelen>
+    </node>
+    <node type="Comment" id="823c4004-54aa-477a-a171-ef13398fc476" x="25.73991" y="-200.6807">
+      <text name="text" visible="false">Some amplitude modulated white noise backtracking a sine wave. Kind of feels like the sound is slowly being toasted.
+
+The master and volume may need to be raised to notice the noise.</text>
+    </node>
+  </wiring>
+  <wiring name="ThurTruthOutThere" cat="alien" output="b0682741-7022-4fad-90f2-4df34d82c75b">
+    <node type="Output" id="b0682741-7022-4fad-90f2-4df34d82c75b" x="2112.635" y="-271.106">
+      <connection name="Input" visible="false">1706f9ab-8409-48e3-a647-01a951d30f4a</connection>
+    </node>
+    <node type="SineWave" id="b902046b-06f3-4d5e-961b-224ce363ba60" x="311.4448" y="-277.8058">
+      <float name="Gain" visible="false">0.4</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="SineWave" id="27e31fc5-8863-40d8-b458-70c68d089eca" x="73.90645" y="-549.1124">
+      <float name="Gain" visible="false">0.082</float>
+      <timelen name="Freq" visible="false">frmm| 5</timelen>
+    </node>
+    <node type="CombAdd" id="4d082e1e-0595-4978-9212-e1d3a741074e" x="596.3247" y="-307.4116">
+      <connection name="A" visible="false">b902046b-06f3-4d5e-961b-224ce363ba60</connection>
+      <connection name="B" visible="false">1bad644c-a702-45ec-acdc-a8fbfa0796b7</connection>
+    </node>
+    <node type="EnvDecay" id="1bad644c-a702-45ec-acdc-a8fbfa0796b7" x="347.7715" y="-470.539">
+      <connection name="Input" visible="false">27e31fc5-8863-40d8-b458-70c68d089eca</connection>
+      <timelen name="Offset" visible="false">sec| 0.25</timelen>
+      <timelen name="Decay" visible="false">sec| 0.9098347</timelen>
+      <float name="Sustain" visible="false">0</float>
+    </node>
+    <node type="GateWave" id="a84f3eaf-b526-4471-b66e-50d8e86658cf" x="607.5248" y="-519.4389">
+      <float name="Gain" visible="false">0.8</float>
+      <timelen name="Freq" visible="false">frmd| 6</timelen>
+    </node>
+    <node type="Delay" id="2227ffd9-09ec-49d8-9284-53f95ff6c575" x="874.8187" y="-467.8542">
+      <connection name="Input" visible="false">a84f3eaf-b526-4471-b66e-50d8e86658cf</connection>
+      <timelen name="Offset" visible="false">sec| 0.25</timelen>
+      <float name="Dampen" visible="false">1</float>
+      <int name="Voices" visible="false">2</int>
+    </node>
+    <node type="CombMod" id="a12ab2fa-9a21-4ce6-8695-4246a18c6a70" x="1171.539" y="-307.9435">
+      <connection name="A" visible="false">4d082e1e-0595-4978-9212-e1d3a741074e</connection>
+      <connection name="B" visible="false">2227ffd9-09ec-49d8-9284-53f95ff6c575</connection>
+    </node>
+    <node type="Delay" id="871c4c22-238f-43e9-b07f-6ea3977a77b3" x="1432.096" y="-273.7957">
+      <connection name="Input" visible="false">a12ab2fa-9a21-4ce6-8695-4246a18c6a70</connection>
+      <timelen name="Offset" visible="false">sec| 0.04678304</timelen>
+      <float name="Dampen" visible="false">1</float>
+      <int name="Voices" visible="false">2</int>
+    </node>
+    <node type="EnvADSR" id="1706f9ab-8409-48e3-a647-01a951d30f4a" x="1740.594" y="-280.6563">
+      <connection name="Input" visible="false">871c4c22-238f-43e9-b07f-6ea3977a77b3</connection>
+      <timelen name="Offset" visible="false">sec| 0</timelen>
+      <timelen name="Attack" visible="false">sec| 0.8382635</timelen>
+      <timelen name="Decay" visible="false">sec| 0.217008</timelen>
+      <float name="Sustain" visible="false">0.138</float>
+      <timelen name="Release" visible="false">sec| 0.9637005</timelen>
+    </node>
+  </wiring>
+  <wiring name="Smooth Voxerator" cat="voice" output="4e89e4fb-6486-4ae1-9d74-929292e2926f">
+    <node type="Output" id="4e89e4fb-6486-4ae1-9d74-929292e2926f" x="2887.379" y="-244.705">
+      <connection name="Input" visible="false">9405e3f8-471b-4d26-9e52-3a676d884f20</connection>
+    </node>
+    <node type="SineWave" id="a16ddfda-685a-4e45-8aa6-e7ae184abe39" x="30" y="-30">
+      <float name="Gain" visible="false">0.8</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="SawWave" id="ab578cdb-38bf-408e-bafe-fe9fd743a41e" x="26.99109" y="-296.3645">
+      <float name="Gain" visible="false">0.8</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="Cube" id="2576e7f6-d1c6-4db3-9dc0-5d8ae005baac" x="319.0346" y="-273.4138">
+      <connection name="Input" visible="false">ab578cdb-38bf-408e-bafe-fe9fd743a41e</connection>
+    </node>
+    <node type="Quant" id="1847d19b-53cf-493d-ba20-23c3e302a498" x="575.5414" y="-262.6648">
+      <connection name="Input" visible="false">2576e7f6-d1c6-4db3-9dc0-5d8ae005baac</connection>
+      <float name="Levels" visible="false">4</float>
+    </node>
+    <node type="Delay" id="94501df9-0f55-4afe-bbde-f489320d6bce" x="856.6552" y="-244.9934">
+      <connection name="Input" visible="false">1847d19b-53cf-493d-ba20-23c3e302a498</connection>
+      <timelen name="Offset" visible="false">sec| 0.25</timelen>
+      <float name="Dampen" visible="false">0.805</float>
+      <int name="Voices" visible="false">4</int>
+    </node>
+    <node type="Delay" id="1fbb0694-b505-416b-bf08-9519b369de3a" x="1075.34" y="-225.671">
+      <connection name="Input" visible="false">94501df9-0f55-4afe-bbde-f489320d6bce</connection>
+      <timelen name="Offset" visible="false">sec| 0.4699078</timelen>
+      <float name="Dampen" visible="false">1</float>
+      <int name="Voices" visible="false">2</int>
+    </node>
+    <node type="Delay" id="4f04d18f-0deb-45c1-aab7-1f83555e330e" x="1731.045" y="-196.2815">
+      <connection name="Input" visible="false">9a8bc1b4-0f96-4faf-b221-1156f2a51177</connection>
+      <timelen name="Offset" visible="false">frmd| 3</timelen>
+      <float name="Dampen" visible="false">0.443</float>
+      <int name="Voices" visible="false">4</int>
+    </node>
+    <node type="EnvADSR" id="9a8bc1b4-0f96-4faf-b221-1156f2a51177" x="1429.668" y="-176.1434">
+      <connection name="Input" visible="false">1fbb0694-b505-416b-bf08-9519b369de3a</connection>
+      <timelen name="Offset" visible="false">sec| 0</timelen>
+      <timelen name="Attack" visible="false">sec| 0.25</timelen>
+      <timelen name="Decay" visible="false">sec| 0.25</timelen>
+      <float name="Sustain" visible="false">0.399</float>
+      <timelen name="Release" visible="false">sec| 0.1</timelen>
+    </node>
+    <node type="Delay" id="88ada2fa-aad0-4a41-9e26-38567e0e838d" x="1539.522" y="-574.681">
+      <connection name="Input" visible="false">1847d19b-53cf-493d-ba20-23c3e302a498</connection>
+      <timelen name="Offset" visible="false">frmd| 8</timelen>
+      <float name="Dampen" visible="false">0.112897</float>
+      <int name="Voices" visible="false">5</int>
+    </node>
+    <node type="CombAdd" id="2f871186-6da5-40ce-88fb-e31f99b35a46" x="2131.878" y="-277.4411">
+      <connection name="A" visible="false">4f04d18f-0deb-45c1-aab7-1f83555e330e</connection>
+      <connection name="B" visible="false">3301da6c-fb0b-4c18-94ee-9d6faf5c0ebc</connection>
+    </node>
+    <node type="EnvDecay" id="3301da6c-fb0b-4c18-94ee-9d6faf5c0ebc" x="1815.666" y="-496.4206">
+      <connection name="Input" visible="false">88ada2fa-aad0-4a41-9e26-38567e0e838d</connection>
+      <timelen name="Offset" visible="false">sec| 0.25</timelen>
+      <timelen name="Decay" visible="false">sec| 0.25</timelen>
+      <float name="Sustain" visible="false">0</float>
+    </node>
+    <node type="EnvDecay" id="9405e3f8-471b-4d26-9e52-3a676d884f20" x="2498.999" y="-260.6974">
+      <connection name="Input" visible="false">2f871186-6da5-40ce-88fb-e31f99b35a46</connection>
+      <timelen name="Offset" visible="false">sec| 2.540829</timelen>
+      <timelen name="Decay" visible="false">sec| 1.206761</timelen>
+      <float name="Sustain" visible="false">0.2300176</float>
+    </node>
+  </wiring>
+  <wiring name="Regal Shuffle" cat="choir" output="95fe36d0-2839-4c8d-8443-b3a71adf9ced">
+    <node type="Output" id="95fe36d0-2839-4c8d-8443-b3a71adf9ced" x="2300.482" y="-236.2937">
+      <connection name="Input" visible="false">dec13ec5-5bfc-4baf-8e2e-55a9323a0a2e</connection>
+    </node>
+    <node type="SineWave" id="09fda659-786e-4ff7-b244-309c7230fae6" x="30" y="-30">
+      <float name="Gain" visible="false">0.8</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="SawWave" id="9a3d7295-3de7-4418-b107-04db0c5b9556" x="41.56931" y="-254.4894">
+      <float name="Gain" visible="false">0.214</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="Chorus" id="9419c9f5-cc08-434b-a1e2-ab8cbdf02533" x="312.4735" y="-250.3688">
+      <connection name="Input" visible="false">9a3d7295-3de7-4418-b107-04db0c5b9556</connection>
+      <int name="Voices" visible="false">6</int>
+      <float name="Dampen" visible="false">0.755</float>
+      <float name="Freq Offset" visible="false">0.00999999</float>
+    </node>
+    <node type="Delay" id="e2995f99-b6bf-4af3-a125-a660637d18dc" x="593.5804" y="-232.2158">
+      <connection name="Input" visible="false">9419c9f5-cc08-434b-a1e2-ab8cbdf02533</connection>
+      <timelen name="Offset" visible="false">sec| 1.215693</timelen>
+      <float name="Dampen" visible="false">1</float>
+      <int name="Voices" visible="false">2</int>
+    </node>
+    <node type="Delay" id="1e2762ef-0bc2-441a-958e-3fad6300deb3" x="878.687" y="-229.2022">
+      <connection name="Input" visible="false">e2995f99-b6bf-4af3-a125-a660637d18dc</connection>
+      <timelen name="Offset" visible="false">foct| -2</timelen>
+      <float name="Dampen" visible="false">0.71</float>
+      <int name="Voices" visible="false">5</int>
+    </node>
+    <node type="EnvDecay" id="ce144fd3-b201-4658-b677-42fac3dfef7b" x="1178.997" y="-236.6424">
+      <connection name="Input" visible="false">1e2762ef-0bc2-441a-958e-3fad6300deb3</connection>
+      <timelen name="Offset" visible="false">sec| 0.25</timelen>
+      <timelen name="Decay" visible="false">sec| 0.9538236</timelen>
+      <float name="Sustain" visible="false">0.5</float>
+    </node>
+    <node type="SineWave" id="3624412f-4cef-46ce-8898-c32904922e8c" x="1168.192" y="-508.229">
+      <float name="Gain" visible="false">0.214</float>
+      <timelen name="Freq" visible="false">foct| -2</timelen>
+    </node>
+    <node type="CombAdd" id="56fb9bec-db9a-4586-8619-871783320b13" x="1503.788" y="-308.386">
+      <connection name="A" visible="false">ce144fd3-b201-4658-b677-42fac3dfef7b</connection>
+      <connection name="B" visible="false">3624412f-4cef-46ce-8898-c32904922e8c</connection>
+    </node>
+    <node type="EnvADSR" id="39a3d4c6-7e82-4c2c-8a96-09a7b0b6dc81" x="1787.945" y="-254.7971">
+      <connection name="Input" visible="false">56fb9bec-db9a-4586-8619-871783320b13</connection>
+      <timelen name="Offset" visible="false">sec| 0</timelen>
+      <timelen name="Attack" visible="false">sec| 0.05192868</timelen>
+      <timelen name="Decay" visible="false">sec| 0.9624969</timelen>
+      <float name="Sustain" visible="false">0.291</float>
+      <timelen name="Release" visible="false">sec| 0.6129624</timelen>
+    </node>
+    <node type="Amplify" id="dec13ec5-5bfc-4baf-8e2e-55a9323a0a2e" x="2058.463" y="-219.5922">
+      <connection name="Input" visible="false">39a3d4c6-7e82-4c2c-8a96-09a7b0b6dc81</connection>
+      <float name="Gain" visible="false">2.028</float>
+    </node>
+  </wiring>
+  <wiring name="Mouth Breather" cat="voice" output="77060dbc-746c-47fc-a3b6-eb87aa721836">
+    <node type="Output" id="77060dbc-746c-47fc-a3b6-eb87aa721836" x="3195.263" y="-224.7717">
+      <connection name="Input" visible="false">e3c3962a-4ff6-4631-86ba-9bfe146d3722</connection>
+    </node>
+    <node type="SineWave" id="63ed7c55-bb18-4e59-a59a-d5e81e03c152" x="0" y="-71.41116">
+      <float name="Gain" visible="false">0.863</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="GateWave" id="de30a886-25df-4df8-8b0b-1423a642db67" x="518.6919" y="-309.5067">
+      <float name="Gain" visible="false">0.8</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="Max" id="d793c921-3602-4ffb-96ce-5b68b8f483f9" x="802.6535" y="-94.64521">
+      <connection name="A" visible="false">9d6292d5-143f-4b68-8466-98e7c9651016</connection>
+      <connection name="B" visible="false">de30a886-25df-4df8-8b0b-1423a642db67</connection>
+    </node>
+    <node type="Min" id="27f84a4a-8163-4a76-bc08-4314d953ae3c" x="1282.862" y="-154.9807">
+      <connection name="A" visible="false">d793c921-3602-4ffb-96ce-5b68b8f483f9</connection>
+      <connection name="B" visible="false">baacf9e4-367e-4c72-ac8a-bc1524416644</connection>
+    </node>
+    <node type="SawWave" id="90a73834-3d5f-45fe-bcbc-2efd2bfccfe9" x="311.3571" y="-455.297">
+      <float name="Gain" visible="false">0.357</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="CombSub" id="c9e9558d-35f1-40ba-84dd-94a706206613" x="779.1779" y="-447.382">
+      <connection name="A" visible="false">90a73834-3d5f-45fe-bcbc-2efd2bfccfe9</connection>
+      <connection name="B" visible="false">7a88acc3-c752-47cb-af16-c9f158648c3d</connection>
+    </node>
+    <node type="Constant" id="061fc7f3-c690-4d70-889f-8143315bc191" x="228.6405" y="-684.7503">
+      <float name="value" visible="false">0.1819968</float>
+    </node>
+    <node type="EnvDecay" id="7a88acc3-c752-47cb-af16-c9f158648c3d" x="519.1815" y="-596.6404">
+      <connection name="Input" visible="false">061fc7f3-c690-4d70-889f-8143315bc191</connection>
+      <timelen name="Offset" visible="false">sec| 0.25</timelen>
+      <timelen name="Decay" visible="false">sec| 0.25</timelen>
+      <float name="Sustain" visible="false">0.5</float>
+    </node>
+    <node type="EnvDecay" id="baacf9e4-367e-4c72-ac8a-bc1524416644" x="1010.781" y="-257.9849">
+      <connection name="Input" visible="false">c9e9558d-35f1-40ba-84dd-94a706206613</connection>
+      <timelen name="Offset" visible="false">sec| 0.25</timelen>
+      <timelen name="Decay" visible="false">sec| 0.25</timelen>
+      <float name="Sustain" visible="false">0.5</float>
+    </node>
+    <node type="Chorus" id="805a0dfd-efe7-4a61-9189-dff571c752ff" x="234.0574" y="-41.45578">
+      <connection name="Input" visible="false">63ed7c55-bb18-4e59-a59a-d5e81e03c152</connection>
+      <int name="Voices" visible="false">2</int>
+      <float name="Dampen" visible="false">1</float>
+      <float name="Freq Offset" visible="false">-0.2</float>
+    </node>
+    <node type="Cube" id="9d6292d5-143f-4b68-8466-98e7c9651016" x="512.6486" y="-69.84064">
+      <connection name="Input" visible="false">805a0dfd-efe7-4a61-9189-dff571c752ff</connection>
+    </node>
+    <node type="Delay" id="5fc3f5c6-8c8b-4556-9d60-b51dabd12d42" x="2609.693" y="-269.5961">
+      <connection name="Input" visible="false">5e52b7ca-68d9-49e7-a631-9596daab4fbb</connection>
+      <timelen name="Offset" visible="false">foct| 4</timelen>
+      <float name="Dampen" visible="false">0.836</float>
+      <int name="Voices" visible="false">4</int>
+    </node>
+    <node type="NoiseWave" id="bdfe2ce5-2db3-4a5d-8121-53874fa98430" x="1048.459" y="-571.2111">
+      <float name="Gain" visible="false">0.8</float>
+    </node>
+    <node type="GateWave" id="fd90c285-9032-4139-b529-7420b89fbbd2" x="1067.207" y="-735.6132">
+      <float name="Gain" visible="false">0.8</float>
+      <timelen name="Freq" visible="false">foct| 0</timelen>
+    </node>
+    <node type="CombMod" id="de035dd4-4712-4fd2-8a98-9ae9f65c1d4f" x="1550.287" y="-578.1221">
+      <connection name="A" visible="false">bdfe2ce5-2db3-4a5d-8121-53874fa98430</connection>
+      <connection name="B" visible="false">fd90c285-9032-4139-b529-7420b89fbbd2</connection>
+    </node>
+    <node type="CombSub" id="5e52b7ca-68d9-49e7-a631-9596daab4fbb" x="2216.607" y="-316.8367">
+      <connection name="A" visible="false">27f84a4a-8163-4a76-bc08-4314d953ae3c</connection>
+      <connection name="B" visible="false">0de645ed-4329-4db9-b49c-1ddaa614e2b3</connection>
+    </node>
+    <node type="CombMod" id="0de645ed-4329-4db9-b49c-1ddaa614e2b3" x="1837.83" y="-611.8806">
+      <connection name="A" visible="false">de035dd4-4712-4fd2-8a98-9ae9f65c1d4f</connection>
+      <connection name="B" visible="false">b857cb24-9c0b-4788-b432-bccddab126c0</connection>
+    </node>
+    <node type="SineWave" id="b857cb24-9c0b-4788-b432-bccddab126c0" x="1553.179" y="-792.1759">
+      <float name="Gain" visible="false">0.8</float>
+      <timelen name="Freq" visible="false">frmd| 4</timelen>
+    </node>
+    <node type="Amplify" id="e3c3962a-4ff6-4631-86ba-9bfe146d3722" x="2905.182" y="-229.5649">
+      <connection name="Input" visible="false">5fc3f5c6-8c8b-4556-9d60-b51dabd12d42</connection>
+      <float name="Gain" visible="false">0.3299999</float>
+    </node>
+  </wiring>
+</phonics>

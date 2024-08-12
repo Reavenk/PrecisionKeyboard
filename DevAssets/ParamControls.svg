@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="ParamControls.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.959798"
+     inkscape:cx="45.836328"
+     inkscape:cy="507.14204"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:window-width="2498"
+     inkscape:window-height="1057"
+     inkscape:window-x="2614"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid815"
+       units="mm"
+       spacingx="1"
+       spacingy="1" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="opacity:1;vector-effect:none;fill:#ff0000;fill-opacity:0;stroke:none;stroke-width:0.26458332;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect817"
+       width="20"
+       height="20"
+       x="5"
+       y="147"
+       inkscape:export-filename="C:\Users\Reavenk\Dial.png"
+       inkscape:export-xdpi="109.88"
+       inkscape:export-ydpi="109.88" />
+    <rect
+       style="opacity:1;vector-effect:none;fill:#00ff00;fill-opacity:1;stroke:#000000;stroke-width:0.13229167;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect828"
+       width="20"
+       height="13"
+       x="-20"
+       y="147"
+       ry="2"
+       rx="2"
+       inkscape:export-filename="C:\Users\Reavenk\SwitchOn.png"
+       inkscape:export-xdpi="109.88"
+       inkscape:export-ydpi="109.88" />
+    <rect
+       style="opacity:1;vector-effect:none;fill:#dcdcdc;fill-opacity:1;stroke:#000000;stroke-width:0.13229167;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect857"
+       width="11.999998"
+       height="11.000015"
+       x="-18.999998"
+       y="147.99998"
+       rx="1"
+       ry="1"
+       inkscape:export-filename="C:\Users\Reavenk\SwitchOn.png"
+       inkscape:export-xdpi="109.88"
+       inkscape:export-ydpi="109.88" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.66540956px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.14163522"
+       x="-12.96133"
+       y="155.73772"
+       id="text861"
+       inkscape:export-filename="C:\Users\Reavenk\SwitchOn.png"
+       inkscape:export-xdpi="109.88"
+       inkscape:export-ydpi="109.88"><tspan
+         sodipodi:role="line"
+         id="tspan859"
+         x="-12.96133"
+         y="155.73772"
+         style="stroke-width:0.14163522">ON</tspan></text>
+    <rect
+       style="opacity:1;vector-effect:none;fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.13229169;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect828-3"
+       width="20"
+       height="13"
+       x="-20"
+       y="165"
+       ry="2"
+       rx="2"
+       inkscape:export-filename="C:\Users\Reavenk\SwitchOff.png"
+       inkscape:export-xdpi="109.88"
+       inkscape:export-ydpi="109.88" />
+    <rect
+       style="opacity:1;vector-effect:none;fill:#dcdcdc;fill-opacity:1;stroke:#000000;stroke-width:0.13229169;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect857-5"
+       width="11.999998"
+       height="11.000015"
+       x="-12.999998"
+       y="165.99998"
+       rx="1"
+       ry="1"
+       inkscape:export-filename="C:\Users\Reavenk\SwitchOff.png"
+       inkscape:export-xdpi="109.88"
+       inkscape:export-ydpi="109.88" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.66540956px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.14163524"
+       x="-6.9613304"
+       y="173.73772"
+       id="text861-5"
+       inkscape:export-filename="C:\Users\Reavenk\SwitchOff.png"
+       inkscape:export-xdpi="109.88"
+       inkscape:export-ydpi="109.88"><tspan
+         sodipodi:role="line"
+         id="tspan859-7"
+         x="-6.9613299"
+         y="173.73772"
+         style="stroke-width:0.14163524">OFF</tspan></text>
+    <path
+       style="opacity:1;vector-effect:none;fill:#dcdcdc;fill-opacity:1;stroke:#000000;stroke-width:0.49999997;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 56.693359 555.58984 A 37.795276 37.795276 0 0 0 18.898438 593.38672 A 37.795276 37.795276 0 0 0 29.984375 620.0957 L 37.796875 612.2832 L 33.099609 612.2832 A 30.23622 30.23622 0 0 1 26.457031 593.38672 A 30.23622 30.23622 0 0 1 56.693359 563.15039 A 30.23622 30.23622 0 0 1 86.929688 593.38672 A 30.23622 30.23622 0 0 1 80.259766 612.2832 L 75.589844 612.2832 L 83.402344 620.0957 A 37.795276 37.795276 0 0 0 94.488281 593.38672 A 37.795276 37.795276 0 0 0 56.693359 555.58984 z "
+       transform="scale(0.26458333)"
+       id="path913" />
+    <circle
+       style="opacity:1;vector-effect:none;fill:#dcdcdc;fill-opacity:1;stroke:#000000;stroke-width:0.13229166;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path926"
+       cx="15"
+       cy="156.99998"
+       r="3" />
+    <rect
+       style="opacity:1;vector-effect:none;fill:#f0f0f0;fill-opacity:1;stroke:#000000;stroke-width:0.1322917;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect828-3-6"
+       width="6.9999676"
+       height="13"
+       x="-29.000002"
+       y="165"
+       ry="2"
+       rx="2"
+       inkscape:export-filename="C:\Users\Reavenk\Slider.png"
+       inkscape:export-xdpi="109.88"
+       inkscape:export-ydpi="109.88" />
+    <rect
+       style="opacity:1;vector-effect:none;fill:#dcdcdc;fill-opacity:1;stroke:#000000;stroke-width:0.1322917;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect857-5-6-3"
+       width="5"
+       height="11"
+       x="-36"
+       y="166"
+       rx="1"
+       ry="1"
+       inkscape:export-filename="C:\Users\Reavenk\SliderThumb.png"
+       inkscape:export-xdpi="109.88"
+       inkscape:export-ydpi="109.88" />
+    <path
+       style="fill:#dcdcdc;stroke:#000000;stroke-width:0.13229167;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;fill-opacity:1"
+       d="m 28,157 2.000002,2 L 32,157 30.000002,147 Z"
+       id="path998"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\Reavenk\DialNeedle.png"
+       inkscape:export-xdpi="109.88"
+       inkscape:export-ydpi="109.88" />
+  </g>
+</svg>

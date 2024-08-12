@@ -1,0 +1,7 @@
+Welcome to Precision Keyboard!
+
+This application is designed to let users explore audio synthesis, have a virtual keyboard, and exercise music theory concepts. Hopefully there's something fun and useful for both beginners and veterans of pianos, music, and synthesizers.
+
+The application is made to run on different form factors, from the desktop to a mobile phone in your pocket. The first peice of advice is to modify the <b>UI Scale</b> slider in the <b>Options</b> tab to adjust the UI to be the most comfortable form for your device type.
+
+It is also recommended that new users read the <b>FAQ</b> notes, as well as the other notes also available in the <b>Options</b> tab.

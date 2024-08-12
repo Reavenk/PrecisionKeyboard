@@ -1,0 +1,13 @@
+The <b>Wiring</b> tab has a collection of different instruments that can be edited.
+
+Authoring wiring instruments is done with an open-ended node graph system.
+
+<size=30><b>Graph Network</b></size>
+
+The nodes have various parameters and can have audio signals linked through each other to form a "node graph network". This is essentially the schematic for your instrument - or you could also think of it as programming the instrument. There are countless ways to do so.
+
+Each wiring instrument has exactly one <b>Output</b> node. Nodes can be connected from outputs on the right side of nodes to the inputs of the left sides of other nodes.
+
+<size=30><b>Nodes</b></size>
+
+On the left side of the wiring tab, there is a list of nodes. These nodes can be tapped for more information about them. To add the nodes to the active wiring, simply drag and drop the button into the wiring canvas (the scrollable region on the right side).
